@@ -18,7 +18,7 @@
     }, {
         "name": "City",
         "isSort": "",
-        "tableRef": "city"
+        "tableRef": "city.name"
     }],
     "button": [{
         "name": "excelexport",
