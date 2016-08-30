@@ -1,0 +1,77 @@
+{
+    "title": "All Timings",
+    "desciption": "",
+    "pageType": "view",
+    "sendIdWithCreate": true,
+    "urlFields": ["_id"],
+    "fields": [{
+        "name": "Type",
+        "isSort": "",
+        "tableRef": "type"
+    }, {
+        "name": "Weekday Price",
+        "isSort": "",
+        "tableRef": "weekdayPrice"
+    }, {
+        "name": "Weekend Price",
+        "isSort": "",
+        "tableRef": "weekendPrice"
+    }],
+    "action": [{
+        "name": "edit",
+        "icon": "mode_edit",
+        "color": "blue",
+        "action": "redirect",
+        "jsonPage": "editTiming",
+        "fieldsToSend": ["_id"],
+        "callFindOne": "exploresmash/saveTiming"
+    }, {
+        "name": "delete",
+        "icon": "delete",
+        "color": "red",
+        "action": "apiCallConfirm",
+        "title": "Delete Slider",
+        "content": "Are you sure you want to delete timing?",
+        "api": "exploresmash/deleteTiming",
+        "fieldsToSend": [{
+            "name": "_id",
+            "value": "_id"
+        }]
+    }],
+    "button": [{
+        "name": "excelexport",
+        "icon": "print",
+        "color": "blue",
+        "action": "excelexport"
+    }, {
+        "name": "uploadcsv",
+        "icon": "delete",
+        "color": "red",
+        "action": "uploadcsv"
+    }],
+
+    "apiCall": {
+      "url": "exploresmash/findTiming",
+      "params": "_id"
+    },
+    "sidemenu": [{
+        "name": "Exploresmash Details",
+        "action": "sidemenuRedirect",
+        "jsonPage": "editExploreSmash",
+        "fieldsToSend": [1],
+        "callFindOne": "exploresmash/getOne"
+    }, {
+        "name": "Timing",
+        "action": "sidemenuRedirect",
+        "jsonPage": "viewTiming",
+        "fieldsToSend": [1],
+        "callFindOne": "exploresmash/findTiming"
+    }, {
+        "name": "Gallery Images",
+        "action": "sidemenuRedirect",
+        "jsonPage": "viewGallery",
+        "fieldsToSend": [1],
+        "callFindOne": "exploresmash/findGallery"
+    }],
+    "createButtonState": "page({jsonName:'createTiming'})"
+}

@@ -1,0 +1,28 @@
+{
+    "title": "Type",
+    "desciption": "",
+    "pageType": "view",
+    "fields": [{
+        "name": "Name",
+        "isSort": "",
+        "tableRef": "name"
+    },{
+      "name":"Order",
+      "isSort":"",
+      "tableRef":"order"
+      }],
+    "action": [{
+        "name": "edit",
+        "icon": "mode_edit",
+        "color": "blue",
+        "action": "redirect",
+        "jsonPage": "editType",
+        "fieldsToSend": ["_id"],
+        "callFindOne": "type/getone"
+    }],
+    "apiCall": {
+        "url": "type/getLimited",
+        "params": ""
+    },
+    "createButtonState": "page({jsonName:'createType'})"
+}

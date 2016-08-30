@@ -1,0 +1,60 @@
+{
+    "title": "All Recharge Smaash Card",
+    "desciption": "",
+    "pageType": "view",
+    "fields": [{
+        "name": "City",
+        "isSort": "",
+        "tableRef": "city.name"
+    },{
+        "name": "User",
+        "isSort": "",
+        "tableRef": "user.name"
+    }, {
+        "name": "Name",
+        "isSort": "",
+        "tableRef": "name"
+    },{
+        "name": "Amount",
+        "isSort": "",
+        "tableRef": "amount"
+    }],
+    "action": [{
+        "name": "edit",
+        "icon": "mode_edit",
+        "color": "blue",
+        "action": "redirect",
+        "jsonPage": "editRechargeSmaashCard",
+        "fieldsToSend": ["_id"],
+        "callFindOne": "recharge/getOne"
+    }, {
+        "name": "delete",
+        "icon": "delete",
+        "color": "red",
+        "action": "apiCallConfirm",
+        "title": "Delete Slider",
+        "content": "Are you sure you want to delete slider?",
+        "api": "recharge/delete",
+        "fieldsToSend": [{
+            "name": "_id",
+            "value": "_id"
+        }]
+    }],
+    "button": [{
+        "name": "excelexport",
+        "icon": "print",
+        "color": "blue",
+        "action": "excelexport"
+    }, {
+        "name": "uploadcsv",
+        "icon": "delete",
+        "color": "red",
+        "action": "uploadcsv"
+    }],
+
+    "apiCall": {
+        "url": "recharge/findLimited",
+        "params": ""
+    },
+    "createButtonState": "page({jsonName:'createRechargeSmaashCard'})"
+}
