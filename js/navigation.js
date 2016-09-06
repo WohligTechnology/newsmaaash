@@ -1,12 +1,12 @@
-var adminurl = "http://104.154.89.21:82/";
-// var adminurl = "http://localhost:1337/";
+// var adminurl = "http://104.154.89.21:82/";
+var adminurl = "http://localhost:1337/";
 var uploadurl = adminurl + "upload/";
 var imgpath = uploadurl + "readFile";
 var navigationservice = angular.module('navigationservice', [])
 
 .factory('NavigationService', function($http) {
     var navigation = [{
-        name: "Registrations",
+        name: "Users",
         classis: "active",
         link: "#/page/userView",
         subnav: []
@@ -21,7 +21,7 @@ var navigationservice = angular.module('navigationservice', [])
         link: "#/page/viewSlider",
         subnav: []
     }, {
-        name: "Config",
+        name: "Landing Page",
         classis: "active",
         link: "#/page/viewConfig",
         subnav: []
@@ -29,6 +29,36 @@ var navigationservice = angular.module('navigationservice', [])
         name: "Explore Smaash",
         classis: "active",
         link: "#/page/viewExploreSmash",
+        subnav: []
+    }, {
+        name: "What's New",
+        classis: "active",
+        link: "#/page/viewWhatsNew",
+        subnav: []
+    }, {
+        name: "Attraction",
+        classis: "active",
+        link: "#/page/viewEnquiry",
+        subnav: []
+    }, {
+        name: "Deals and Packages",
+        classis: "active",
+        link: "#/page/viewEnquiry",
+        subnav: []
+    }, {
+        name: "Host a Party",
+        classis: "active",
+        link: "#/page/viewEnquiry",
+        subnav: []
+    }, {
+        name: "Events",
+        classis: "active",
+        link: "#/page/viewEvent",
+        subnav: []
+    },{
+        name: "Food and Beverages",
+        classis: "active",
+        link: "#/page/viewEvent",
         subnav: []
     }, {
         name: "Promotions",
@@ -44,11 +74,6 @@ var navigationservice = angular.module('navigationservice', [])
         name: "Stars at Smaaash",
         classis: "active",
         link: "#/page/viewStars",
-        subnav: []
-    }, {
-        name: "Events",
-        classis: "active",
-        link: "#/page/viewEvent",
         subnav: []
     }, {
         name: "Subscribe",

@@ -1,43 +1,33 @@
 {
-    "title": "All Slider",
+    "title": "All What's New",
     "desciption": "",
-     "showSearch": true,
-     "addSearch": true,
     "pageType": "view",
     "fields": [ {
-        "name": "Title",
+        "name": "Type",
         "isSort": "",
-        "tableRef": "title"
-    }, {
-        "name": "Banner",
+        "tableRef": "type.name"
+    },{
+        "name": "Image",
         "isSort": "",
         "tableRef": "image",
         "type": "image"
-    } ,{
-        "name": "Status",
-        "isSort": "",
-        "tableRef": "status"
-    },{
-        "name": "Order",
-        "isSort": "",
-        "tableRef": "order"
     }],
     "action": [{
         "name": "edit",
         "icon": "mode_edit",
         "color": "blue",
         "action": "redirect",
-        "jsonPage": "editSlider",
+        "jsonPage": "editExploreSmash",
         "fieldsToSend": ["_id"],
-        "callFindOne": "slider/getOne"
+        "callFindOne": "exploresmash/findOne"
     }, {
         "name": "delete",
         "icon": "delete",
         "color": "red",
         "action": "apiCallConfirm",
-        "title": "Delete Slider",
-        "content": "Are you sure you want to delete slider?",
-        "api": "slider/delete",
+        "title": "Delete Explore Smash",
+        "content": "Are you sure you want to delete explore smash?",
+        "api": "exploresmash/delete",
         "fieldsToSend": [{
             "name": "_id",
             "value": "_id"
@@ -56,11 +46,8 @@
     }],
 
     "apiCall": {
-        "url": "slider/findLimited",
+        "url": "exploresmash/findLimited",
         "params": ""
     },
-    "apiCallForSearch": {
-      "url": "city/getAll"
-  },
-    "createButtonState": "page({jsonName:'createSlider'})"
+    "createButtonState": "page({jsonName:'createExploreSmash'})"
 }

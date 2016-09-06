@@ -1,12 +1,21 @@
 {
-    "title": "All Config",
+    "title": "All Landing Page",
     "desciption": "",
     "pageType": "view",
     "fields": [
     {
-        "name": "Url",
+        "name": "City",
         "isSort": "",
-        "tableRef": "url"
+        "tableRef": "city.name"
+    },{
+        "name": "Video Title",
+        "isSort": "",
+        "tableRef": "videotitle"
+    },{
+        "name": "Video Thumbnail",
+        "isSort": "",
+        "tableRef": "thumbnail",
+          "type":"image"
     },{
         "name": "Home Page Banner",
         "isSort": "",

@@ -16,47 +16,65 @@
     },{
         "name": "City Name",
         "type": "selectFromTable",
-          "option":"multiple",
+        "option":"multiple",
         "tableRef": "city",
+        "model": "city",
         "placeholder": "Enter name",
         "id": "input1",
         "validation": ["required", "trim", "unique"],
-        "url": "city/getAll",
-        "model":"city"
-    },{
-        "name": "Type",
-        "type": "select",
-        "tableRef": "type",
-        "model": "type",
-        "placeholder": "Enter name",
-        "id": "input1",
-        "validation": ["required", "trim", "unique"],
-        "url": [{
-          "name":"Home Page",
-          "value":1
-          },{
-            "name":"Host a Party",
-            "value":2
-            }]
+        "url": "city/getAll"
     }, {
         "name": "Order",
         "type": "text",
         "tableRef": "order",
+        "model": "order",
         "placeholder": "Enter order",
         "id": "input5",
         "validation": ["required", "trim", "unique"],
-        "url": "",
-        "model":"order"
-    }, {
-        "name": "Image",
+        "url": ""
+    },{
+        "name": "Banner",
         "type": "image",
         "tableRef": "image",
+        "model": "image",
         "size":"1920px X 738px",
         "placeholder": "Enter City Picture",
         "id": "input4",
         "validation": ["required", "trim", "unique"],
-        "url": "",
-        "model": "image"
+        "url": ""
+    },{
+        "name": "Title",
+        "type": "text",
+        "tableRef": "title",
+        "model": "title",
+        "placeholder": "Enter title",
+        "id": "input5",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    },{
+        "name": "Banner Click Url",
+        "type": "text",
+        "tableRef": "url",
+        "model": "url",
+        "placeholder": "Enter url",
+        "id": "input5",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    } , {
+        "name": "Status",
+        "type": "select",
+        "tableRef": "status",
+        "model": "status",
+        "placeholder": "Enter status",
+        "id": "input3",
+        "validation": ["required", "trim", "unique"],
+        "url": [{
+            "value": true,
+            "name": "Enable"
+        }, {
+            "value": false,
+            "name": "Disable"
+        }]
     }],
     "action": [{
         "name": "submit",

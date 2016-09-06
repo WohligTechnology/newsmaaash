@@ -1,14 +1,14 @@
 <section class="md-whiteframe-z1 users pb50">
     <md-list ng-cloak>
       <md-input-container ng-if="json.addSearch">
-    <label>Movies</label>
+    <label>Select City</label>
     <md-select ng-model="movie" ng-change="getAwardByMovie(movie)">
       <md-option ng-repeat="dropdown in dropdownvalues" value="{{dropdown._id}}">
         {{dropdown.name}}
       </md-option>
     </md-select>
   </md-input-container>
-  <div class="search-input" ng-if="!json.addSearch">
+  <div class="search-input" ng-if="!json.showSearch">
     <input ng-model="search" type="text">
       <md-button class="md-raised md-primary" ng-click="searchClick(search);">Go</md-button>
     </div>
