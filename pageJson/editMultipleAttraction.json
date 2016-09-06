@@ -1,0 +1,62 @@
+{
+    "title": "Edit Multiple Attraction",
+    "jsonPage": "viewGallery",
+    "desciption": "",
+    "pageType": "edit",
+    "urlFields": ["_id"],
+    "fields": [{
+        "name": "Id",
+        "type": "hidden",
+        "tableRef": "_id",
+        "placeholder": "Enter id",
+        "id": "input1",
+        "validation": ["required", "trim", "unique"],
+        "url": "",
+        "model": "_id"
+    },{
+        "name": "Select Attraction",
+        "type": "selectFromTable",
+        "option": "single",
+        "tableRef": "attraction",
+        "model": "attraction",
+        "placeholder": "Enter name",
+        "id": "input1",
+        "validation": ["required", "trim", "unique"],
+        "url": "exploresmash/getAllAttraction"
+    },{
+        "name": "Text",
+        "type": "text",
+        "tableRef": "text",
+        "model": "text",
+        "placeholder": "Enter text",
+        "id": "input1",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    }, {
+        "name": "Icon",
+        "type": "image",
+        "tableRef": "image",
+        "model": "icon",
+        "size":"",
+        "placeholder": "Enter City Picture",
+        "id": "input4",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    }],
+    "action": [{
+        "name": "submit",
+        "action": "submitGallery"
+    }, {
+        "name": "cancel",
+        "action": "cancelGallery",
+        "stateName": "page({jsonName:'viewMultipleAttraction'})"
+    }],
+    "apiCall": {
+        "url": "exploresmash/saveMultipleAttraction",
+        "params": "_id"
+    },
+    "preApi": {
+        "url": "exploresmash/findOneMultipleAttraction",
+        "params": "_id"
+    }
+}

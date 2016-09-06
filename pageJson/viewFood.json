@@ -1,5 +1,5 @@
 {
-    "title": "All Host",
+    "title": "All Food & Beverages",
     "desciption": "",
     "pageType": "view",
     "fields": [ {
@@ -21,7 +21,7 @@
         "icon": "mode_edit",
         "color": "blue",
         "action": "redirect",
-        "jsonPage": "editHost",
+        "jsonPage": "editFood",
         "fieldsToSend": ["_id"],
         "callFindOne": "exploresmash/findOne"
     }, {
@@ -50,8 +50,8 @@
     }],
 
     "apiCall": {
-        "url": "exploresmash/findLimitedHost",
+        "url": "exploresmash/findLimitedFood",
         "params": ""
     },
-    "createButtonState": "page({jsonName:'createHost'})"
+    "createButtonState": "page({jsonName:'createFood'})"
 }

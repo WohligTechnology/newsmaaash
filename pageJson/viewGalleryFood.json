@@ -1,0 +1,67 @@
+{
+    "title": "All Gallery",
+    "desciption": "",
+    "pageType": "view",
+    "sendIdWithCreate": true,
+    "fields": [{
+        "name": "Image",
+        "isSort": "",
+        "tableRef": "image",
+        "type":"image"
+    }, {
+        "name": "Order",
+        "isSort": "",
+        "tableRef": "order"
+    }],
+    "action": [{
+        "name": "edit",
+        "icon": "mode_edit",
+        "color": "blue",
+        "action": "redirect",
+        "jsonPage": "editGallery",
+        "fieldsToSend": ["_id"],
+        "callFindOne": "exploresmash/getOneGallery"
+    }, {
+        "name": "delete",
+        "icon": "delete",
+        "color": "red",
+        "action": "apiCallConfirm",
+        "title": "Delete Gallery",
+        "content": "Are you sure you want to delete gallery?",
+        "api": "exploresmash/deleteGallery",
+        "fieldsToSend": [{
+            "name": "_id",
+            "value": "_id"
+        }]
+    }],
+    "button": [{
+        "name": "excelexport",
+        "icon": "print",
+        "color": "blue",
+        "action": "excelexport"
+    }, {
+        "name": "uploadcsv",
+        "icon": "delete",
+        "color": "red",
+        "action": "uploadcsv"
+    }],
+
+    "apiCall": {
+        "url": "exploresmash/findGallery",
+        "params": "_id"
+    },
+    "createButtonState": "page({jsonName:'createGallery'})",
+    "sidemenu": [{
+        "name": "Food and Beverage Details",
+        "action": "sidemenuRedirect",
+        "jsonPage": "editExploreSmash",
+        "fieldsToSend": [1],
+        "callFindOne": "exploresmash/getOne"
+    }, {
+        "name": "Gallery Images",
+        "action": "sidemenuRedirect",
+        "jsonPage": "viewGalleryFood",
+        "fieldsToSend": [1],
+        "callFindOne": "exploresmash/findGallery"
+    }]
+}

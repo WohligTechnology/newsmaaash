@@ -38,17 +38,17 @@ var navigationservice = angular.module('navigationservice', [])
     }, {
         name: "Attraction",
         classis: "active",
-        link: "#/page/viewEnquiry",
+        link: "#/page/viewAttraction",
         subnav: []
     }, {
         name: "Deals and Packages",
         classis: "active",
-        link: "#/page/viewEnquiry",
+        link: "#/page/viewDeals",
         subnav: []
     }, {
         name: "Host a Party",
         classis: "active",
-        link: "#/page/viewEnquiry",
+        link: "#/page/viewHost",
         subnav: []
     }, {
         name: "Events",
@@ -58,7 +58,7 @@ var navigationservice = angular.module('navigationservice', [])
     },{
         name: "Food and Beverages",
         classis: "active",
-        link: "#/page/viewEvent",
+        link: "#/page/viewFood",
         subnav: []
     }, {
         name: "Promotions",

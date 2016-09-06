@@ -1,0 +1,45 @@
+{
+    "title": "Create Multiple Attraction",
+    "jsonPage": "viewMultipleAttraction",
+    "desciption": "",
+    "pageType": "create",
+        "urlFields": ["explore"],
+    "fields": [{
+        "name": "Select Attraction",
+        "type": "selectFromTable",
+        "option": "single",
+        "tableRef": "attraction",
+        "placeholder": "Enter name",
+        "id": "input1",
+        "validation": ["required", "trim", "unique"],
+        "url": "exploresmash/getAllAttraction"
+    },{
+        "name": "Text",
+        "type": "text",
+        "tableRef": "text",
+        "placeholder": "Enter text",
+        "id": "input1",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    }, {
+        "name": "Icon",
+        "type": "image",
+        "tableRef": "icon",
+        "size":"",
+        "placeholder": "Enter City Picture",
+        "id": "input4",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    }],
+    "action": [{
+        "name": "submit",
+        "action": "submitTiming"
+    }, {
+        "name": "cancel",
+        "stateName": "page({jsonName:'viewMultipleAttraction'})"
+    }],
+
+    "apiCall": {
+        "url": "exploresmash/saveMultipleAttraction"
+    }
+}

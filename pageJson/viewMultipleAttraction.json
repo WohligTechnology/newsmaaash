@@ -1,0 +1,63 @@
+{
+    "title": "All Multiple Attraction",
+    "desciption": "",
+    "pageType": "view",
+    "sendIdWithCreate": true,
+    "fields": [{
+        "name": "Icon",
+        "isSort": "",
+        "tableRef": "icon",
+        "type":"image"
+    }],
+    "action": [{
+        "name": "edit",
+        "icon": "mode_edit",
+        "color": "blue",
+        "action": "redirect",
+        "jsonPage": "editMultipleAttraction",
+        "fieldsToSend": ["_id"],
+        "callFindOne": "exploresmash/findOneMultipleAttraction"
+    }, {
+        "name": "delete",
+        "icon": "delete",
+        "color": "red",
+        "action": "apiCallConfirm",
+        "title": "Delete Attraction",
+        "content": "Are you sure you want to delete attraction?",
+        "api": "exploresmash/deleteMultipleAttraction",
+        "fieldsToSend": [{
+            "name": "_id",
+            "value": "_id"
+        }]
+    }],
+    "button": [{
+        "name": "excelexport",
+        "icon": "print",
+        "color": "blue",
+        "action": "excelexport"
+    }, {
+        "name": "uploadcsv",
+        "icon": "delete",
+        "color": "red",
+        "action": "uploadcsv"
+    }],
+
+    "apiCall": {
+        "url": "exploresmash/findMultipleAttraction",
+        "params": "_id"
+    },
+    "createButtonState": "page({jsonName:'createMultipleAttraction'})",
+    "sidemenu": [{
+        "name": "Deals and Packages Detail",
+        "action": "sidemenuRedirect",
+        "jsonPage": "editDeals",
+        "fieldsToSend": [1],
+        "callFindOne": "exploresmash/getOne"
+    }, {
+        "name": "Assign Attractions",
+        "action": "sidemenuRedirect",
+        "jsonPage": "viewMultipleAttraction",
+        "fieldsToSend": [1],
+        "callFindOne": "exploresmash/findRegistration"
+    }]
+}
