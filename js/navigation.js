@@ -26,11 +26,6 @@ var navigationservice = angular.module('navigationservice', [])
         link: "#/page/viewConfig",
         subnav: []
     }, {
-        name: "Explore Smaash",
-        classis: "active",
-        link: "#/page/viewExploreSmash",
-        subnav: []
-    }, {
         name: "What's New",
         classis: "active",
         link: "#/page/viewWhatsNew",
@@ -53,22 +48,12 @@ var navigationservice = angular.module('navigationservice', [])
     }, {
         name: "Events",
         classis: "active",
-        link: "#/page/viewEvent",
+        link: "#/page/viewEvents",
         subnav: []
     },{
         name: "Food and Beverages",
         classis: "active",
         link: "#/page/viewFood",
-        subnav: []
-    }, {
-        name: "Promotions",
-        classis: "active",
-        link: "#/page/viewPromotions",
-        subnav: []
-    }, {
-        name: "Recharge Smaash Card",
-        classis: "active",
-        link: "#/page/viewRechargeSmaashCard",
         subnav: []
     }, {
         name: "Stars at Smaaash",
@@ -96,6 +81,18 @@ var navigationservice = angular.module('navigationservice', [])
         link: "#/page/viewEnquiry",
         subnav: []
     }];
+
+    // {
+    //     name: "Promotions",
+    //     classis: "active",
+    //     link: "#/page/viewPromotions",
+    //     subnav: []
+    // }, {
+    //     name: "Recharge Smaash Card",
+    //     classis: "active",
+    //     link: "#/page/viewRechargeSmaashCard",
+    //     subnav: []
+    // }
 
     return {
         getnav: function() {

@@ -1,24 +1,29 @@
 {
-    "title": "All Event",
+    "title": "All Events",
     "desciption": "",
     "pageType": "view",
-    "fields": [{
+    "fields": [ {
         "name": "Title",
         "isSort": "",
-        "tableRef": "title"
-    }, {
-        "name": "Order",
+        "tableRef": "hometext"
+    },{
+        "name": "Image",
         "isSort": "",
-        "tableRef": "order"
+        "tableRef": "image",
+        "type": "image"
+    },{
+        "name": "Status",
+        "isSort": "",
+        "tableRef": "status"
     }],
     "action": [{
         "name": "edit",
         "icon": "mode_edit",
         "color": "blue",
         "action": "redirect",
-        "jsonPage": "editEvent",
+        "jsonPage": "editEvents",
         "fieldsToSend": ["_id"],
-        "callFindOne": "event/findOne"
+        "callFindOne": "exploresmash/findOne"
     }, {
         "name": "delete",
         "icon": "delete",
@@ -26,7 +31,7 @@
         "action": "apiCallConfirm",
         "title": "Delete Explore Smash",
         "content": "Are you sure you want to delete explore smash?",
-        "api": "event/delete",
+        "api": "exploresmash/delete",
         "fieldsToSend": [{
             "name": "_id",
             "value": "_id"
@@ -45,8 +50,8 @@
     }],
 
     "apiCall": {
-        "url": "event/findLimited",
+        "url": "exploresmash/findLimitedEvents",
         "params": ""
     },
-    "createButtonState": "page({jsonName:'createEvent'})"
+    "createButtonState": "page({jsonName:'createEvents'})"
 }
