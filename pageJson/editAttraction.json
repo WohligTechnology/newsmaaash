@@ -195,7 +195,7 @@
         "params": "_id"
     },
     "sidemenu": [{
-        "name": "Exploresmash Details",
+        "name": "Attraction Details",
         "action": "sidemenuRedirect",
         "jsonPage": "editAttraction",
         "fieldsToSend": [1],

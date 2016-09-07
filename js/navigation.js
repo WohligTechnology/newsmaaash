@@ -26,11 +26,6 @@ var navigationservice = angular.module('navigationservice', [])
         link: "#/page/viewConfig",
         subnav: []
     }, {
-        name: "What's New",
-        classis: "active",
-        link: "#/page/viewWhatsNew",
-        subnav: []
-    }, {
         name: "Attraction",
         classis: "active",
         link: "#/page/viewAttraction",
@@ -93,6 +88,12 @@ var navigationservice = angular.module('navigationservice', [])
     //     link: "#/page/viewRechargeSmaashCard",
     //     subnav: []
     // }
+  //   {
+  //      name: "What's New",
+  //      classis: "active",
+  //      link: "#/page/viewWhatsNew",
+  //      subnav: []
+  //  }
 
     return {
         getnav: function() {

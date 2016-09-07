@@ -21,7 +21,7 @@
         "icon": "mode_edit",
         "color": "blue",
         "action": "redirect",
-        "jsonPage": "editHost",
+        "jsonPage": "editAttraction",
         "fieldsToSend": ["_id"],
         "callFindOne": "exploresmash/findOne"
     }, {

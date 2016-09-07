@@ -54,7 +54,7 @@
     "sidemenu": [{
         "name": "Food and Beverage Details",
         "action": "sidemenuRedirect",
-        "jsonPage": "editExploreSmash",
+        "jsonPage": "editFood",
         "fieldsToSend": [1],
         "callFindOne": "exploresmash/getOne"
     }, {

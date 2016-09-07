@@ -50,7 +50,7 @@
     "sidemenu": [{
         "name": "Events Detail",
         "action": "sidemenuRedirect",
-        "jsonPage": "editDeals",
+        "jsonPage": "editEvents",
         "fieldsToSend": [1],
         "callFindOne": "exploresmash/getOne"
     }, {

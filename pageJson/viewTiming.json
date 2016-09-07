@@ -55,9 +55,9 @@
       "params": "_id"
     },
     "sidemenu": [{
-        "name": "Exploresmash Details",
+        "name": "Attraction Details",
         "action": "sidemenuRedirect",
-        "jsonPage": "editExploreSmash",
+        "jsonPage": "editAttraction",
         "fieldsToSend": [1],
         "callFindOne": "exploresmash/getOne"
     }, {
