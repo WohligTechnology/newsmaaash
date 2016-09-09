@@ -44,6 +44,7 @@
         "id": "input4",
         "validation": ["required", "trim", "unique"],
         "url": "",
+        "size": "940 x 564px",
         "model": "image"
     },{
         "name": "Description",

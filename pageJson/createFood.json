@@ -34,7 +34,7 @@
         "type": "image",
         "tableRef": "image",
 
-        "size": "767 x 551 px",
+        "size": "202 x 120 px",
         "placeholder": "Enter Picture",
         "id": "input4",
         "validation": ["required", "trim", "unique"],
@@ -81,7 +81,7 @@
          "name": "Inside Page Image",
          "type": "image",
          "tableRef": "homeimage",
-         "size": "767 x 551 px",
+           "size": "600 x 400 px",
          "placeholder": "Enter Picture",
          "id": "input4",
          "validation": ["required", "trim", "unique"],

@@ -53,5 +53,5 @@
         "url": "exploresmash/findLimitedHost",
         "params": ""
     },
-    "createButtonState": "page({jsonName:'createHost'})"
+    "createButtonState": "page({jsonName:'createAttraction'})"
 }
