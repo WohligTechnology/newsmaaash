@@ -1,0 +1,43 @@
+{
+    "title": "Create Call Enquiry",
+    "jsonPage": "viewCallEnquiry",
+    "desciption": "",
+    "pageType": "create",
+    "fields": [{
+       "name": "City Name",
+       "type": "selectFromTable",
+       "tableRef": "city",
+         "option": "single",
+       "placeholder": "Enter name",
+       "id": "input1",
+       "validation": ["required", "trim", "unique"],
+       "url": "city/getAll"
+   }, {
+        "name": "Contact No",
+        "type": "text",
+        "tableRef": "mobile",
+        "placeholder": "Enter mobile",
+        "id": "input2",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    }, {
+        "name": "Date",
+        "type": "date",
+        "tableRef": "date",
+        "placeholder": "Enter date",
+        "id": "input4",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    }],
+    "action": [{
+        "name": "submit",
+        "action": "submitCallEnquiry"
+    }, {
+        "name": "cancel",
+        "stateName": "page({jsonName:'viewCallEnquiry'})"
+    }],
+
+    "apiCall": {
+        "url": "city/save"
+    }
+}

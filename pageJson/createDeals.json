@@ -108,14 +108,6 @@
          "id": "input5",
          "validation": ["required", "trim", "unique"],
          "url": ""
-     },{
-         "name": "Know more or Microsite link",
-         "type": "text",
-         "tableRef": "sublink",
-         "placeholder": "Enter sublink",
-         "id": "input5",
-         "validation": ["required", "trim", "unique"],
-         "url": ""
      }, {
         "name": "Price",
         "type": "text",

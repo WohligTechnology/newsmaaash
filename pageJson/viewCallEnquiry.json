@@ -1,0 +1,44 @@
+{
+    "title": "All Call Enquiries",
+    "desciption": "",
+    "pageType": "view",
+    "fields": [{
+        "name": "City",
+        "isSort": "",
+        "tableRef": "city.name"
+    }, {
+        "name": "Date",
+        "isSort": "",
+        "tableRef": "date"
+    }, {
+        "name": "Mobile",
+        "isSort": "",
+        "tableRef": "mobile"
+    }],
+    "action": [{
+        "name": "edit",
+        "icon": "mode_edit",
+        "color": "blue",
+        "action": "redirect",
+        "jsonPage": "editCallEnquiry",
+        "fieldsToSend": ["_id"],
+        "callFindOne": "callenquiry/findOne"
+    }],
+    "button": [{
+        "name": "excelexport",
+        "icon": "print",
+        "color": "blue",
+        "action": "excelexport"
+    }, {
+        "name": "uploadcsv",
+        "icon": "delete",
+        "color": "red",
+        "action": "uploadcsv"
+    }],
+
+    "apiCall": {
+        "url": "callenquiry/findLimited",
+        "params": ""
+    },
+      "createButtonState": "page({jsonName:'createCallEnquiry'})"
+}

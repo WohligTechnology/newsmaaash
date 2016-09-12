@@ -1,6 +1,8 @@
 {
-    "title": "All Host",
+    "title": "All Attraction",
     "desciption": "",
+    "showSearch": true,
+    "addSearch": true,
     "pageType": "view",
     "fields": [ {
         "name": "Title",
@@ -50,8 +52,11 @@
     }],
 
     "apiCall": {
-        "url": "exploresmash/findLimitedHost",
+        "url": "exploresmash/findLimitedAttraction",
         "params": ""
     },
+    "apiCallForSearch": {
+      "url": "city/getAll"
+  },
     "createButtonState": "page({jsonName:'createAttraction'})"
 }

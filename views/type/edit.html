@@ -31,9 +31,15 @@
                     <md-option ng-repeat="item in field.url" value="{{item._id}}">{{item.name}}</md-option>
                 </md-select>
             </div> -->
-            <div ng-if="field.type=='select'">
+            <div ng-if="field.type=='select' && !field.option" >
                 <label>{{field.name}}</label>
                 <md-select ng-model="json.editData[field.model]">
+                    <md-option ng-repeat="item in field.url" value="{{item.value}}" ng-if="item">{{item.name}}</md-option>
+                </md-select>
+            </div>
+            <div ng-if="field.type=='select' && field.option=='multiple' && field.option" >
+                <label>{{field.name}}</label>
+                <md-select ng-model="json.editData[field.model]" multiple>
                     <md-option ng-repeat="item in field.url" value="{{item.value}}" ng-if="item">{{item.name}}</md-option>
                 </md-select>
             </div>

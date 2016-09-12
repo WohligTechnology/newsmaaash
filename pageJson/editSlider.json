@@ -14,6 +14,21 @@
         "url": "",
         "model": "_id"
     },{
+        "name": "Type",
+        "type": "select",
+        "tableRef": "type",
+        "model": "type",
+        "placeholder": "Enter type",
+        "id": "input5",
+        "validation": ["required", "trim", "unique"],
+        "url": [{
+            "value": 1,
+            "name": "Home Slider"
+        }, {
+            "value": 2,
+            "name": "Host a Party"
+        }]
+    },{
         "name": "City Name",
         "type": "selectFromTable",
         "option":"multiple",

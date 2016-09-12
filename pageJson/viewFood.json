@@ -1,6 +1,8 @@
 {
     "title": "All Food & Beverages",
     "desciption": "",
+    "showSearch": true,
+    "addSearch": true,
     "pageType": "view",
     "fields": [ {
         "name": "Title",
@@ -53,5 +55,9 @@
         "url": "exploresmash/findLimitedFood",
         "params": ""
     },
+
+    "apiCallForSearch": {
+      "url": "city/getAll"
+  },
     "createButtonState": "page({jsonName:'createFood'})"
 }

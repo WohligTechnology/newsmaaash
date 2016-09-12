@@ -80,14 +80,24 @@
         },
        {
            "name": "Game For",
-           "type": "chips",
+           "type": "select",
+           "option": "multiple",
            "givecomment": "Eg. male,female,children",
            "tableRef": "gamefor",
 
            "placeholder": "Enter google link",
            "id": "input5",
            "validation": ["required", "trim", "unique"],
-           "url": ""
+           "url": [{
+               "value": 1,
+               "name": "Male"
+           }, {
+               "value": 2,
+               "name": "Female"
+           }, {
+               "value": 3,
+               "name": "Children"
+           }]
        }, {
            "name": "Inside Page Top Banner",
            "type": "image",
@@ -104,6 +114,15 @@
            "type": "text",
            "tableRef": "video",
 
+           "placeholder": "Enter video",
+           "id": "input5",
+           "validation": ["required", "trim", "unique"],
+           "url": ""
+       },{
+           "name": "Top Banner Video Thumbnail",
+           "type": "image",
+           "tableRef": "videoThumbnail",
+                "size":"",
            "placeholder": "Enter video",
            "id": "input5",
            "validation": ["required", "trim", "unique"],
@@ -138,7 +157,7 @@
              "url": ""
          },{
               "name": "Deals & Packages",
-              "type": "text",
+              "type": "textarea",
               "tableRef": "deal",
 
               "placeholder": "Enter deal",
@@ -147,7 +166,7 @@
               "url": ""
           },{
               "name": "Current Event",
-              "type": "text",
+              "type": "tinymce",
               "tableRef": "currentEvent",
 
               "placeholder": "Enter current event",

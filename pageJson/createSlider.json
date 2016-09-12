@@ -13,6 +13,20 @@
         "validation": ["required", "trim", "unique"],
         "url": "city/getAll"
     }, {
+        "name": "Type",
+        "type": "select",
+        "tableRef": "type",
+        "placeholder": "Enter type",
+        "id": "input5",
+        "validation": ["required", "trim", "unique"],
+        "url": [{
+            "value": 1,
+            "name": "Home Slider"
+        }, {
+            "value": 2,
+            "name": "Host a Party"
+        }]
+    },{
         "name": "Order",
         "type": "text",
         "tableRef": "order",
