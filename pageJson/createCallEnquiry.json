@@ -38,6 +38,6 @@
     }],
 
     "apiCall": {
-        "url": "city/save"
+        "url": "callenquiry/save"
     }
 }
