@@ -1,0 +1,28 @@
+{
+    "title": "Host a Party Type",
+    "desciption": "",
+    "page": "view",
+    "fields": [{
+        "name": "Name",
+        "isSort": "",
+        "tableRef": "name"
+    },{
+      "name":"Order",
+      "isSort":"",
+      "tableRef":"order"
+      }],
+    "action": [{
+        "name": "edit",
+        "icon": "mode_edit",
+        "color": "blue",
+        "action": "redirect",
+        "jsonPage": "editHost",
+        "fieldsToSend": ["_id"],
+        "callFindOne": "hosttype/getone"
+    }],
+    "apiCall": {
+        "url": "hosttype/getLimited",
+        "params": ""
+    },
+    "createButtonState": "page({jsonName:'createHostType'})"
+}

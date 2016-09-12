@@ -80,6 +80,11 @@ var navigationservice = angular.module('navigationservice', [])
         classis: "active",
         link: "#/page/viewCallEnquiry",
         subnav: []
+    },{
+        name: "Host a Party Type",
+        classis: "active",
+        link: "#/page/viewHostType",
+        subnav: []
     }];
 
     // {

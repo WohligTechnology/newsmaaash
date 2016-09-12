@@ -1,0 +1,33 @@
+{
+    "title": "Create Host a Party Type",
+    "jsonPage": "viewHost",
+    "desciption": "",
+    "pageHost": "create",
+    "fields": [{
+        "name": "Name",
+        "type": "text",
+        "tableRef": "name",
+        "placeholder": "Enter name",
+        "id": "input1",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    }, {
+        "name": "Order",
+        "type": "text",
+        "tableRef": "order",
+        "placeholder": "Enter order",
+        "id": "input5",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    }],
+    "action": [{
+        "name": "submit",
+        "action": "submitHost"
+    }, {
+        "name": "cancel",
+        "stateName": "page({jsonName:'viewHost'})"
+    }],
+    "apiCall": {
+        "url": "hosttype/saveData"
+    }
+}
