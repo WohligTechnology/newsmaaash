@@ -58,12 +58,6 @@
         "fieldsToSend": [1],
         "callFindOne": "exploresmash/getOne"
     }, {
-        "name": "Timing",
-        "action": "sidemenuRedirect",
-        "jsonPage": "viewTiming",
-        "fieldsToSend": [1],
-        "callFindOne": "exploresmash/findTiming"
-    }, {
         "name": "Gallery Images",
         "action": "sidemenuRedirect",
         "jsonPage": "viewGallery",

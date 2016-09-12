@@ -155,6 +155,15 @@
             "validation": ["required", "trim", "unique"],
             "url": ""
         },{
+             "name": "Timing And Pricing",
+             "type": "tinymce",
+             "tableRef": "timingAndPricing",
+             "model": "timingAndPricing",
+             "placeholder": "Enter technology",
+             "id": "input5",
+             "validation": ["required", "trim", "unique"],
+             "url": ""
+         },{
              "name": "Technology",
              "type": "tinymce",
              "tableRef": "technology",
@@ -222,12 +231,6 @@
         "jsonPage": "editAttraction",
         "fieldsToSend": [1],
         "callFindOne": "user/getOne"
-    }, {
-        "name": "Timing",
-        "action": "sidemenuRedirect",
-        "jsonPage": "viewTiming",
-        "fieldsToSend": [1],
-        "callFindOne": "event/findRegistration"
     }, {
         "name": "Gallery",
         "action": "sidemenuRedirect",
