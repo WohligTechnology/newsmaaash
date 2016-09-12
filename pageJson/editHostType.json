@@ -1,8 +1,8 @@
 {
-    "title": "Edit Host a Party Type",
-    "jsonPage": "viewHost",
+    "title": "Edit Host Type",
+    "jsonPage": "viewHostType",
     "desciption": "",
-    "page": "edit",
+    "pageType": "edit",
     "urlFields": ["_id"],
     "fields": [{
         "name": "Id",
@@ -14,15 +14,15 @@
         "url": "",
         "model": "_id"
     },{
-        "name": "Host Name",
+        "name": " Name",
         "type": "text",
         "tableRef": "name",
-        "placeholder": "Enter Host",
+        "placeholder": "Enter name",
         "id": "input1",
         "validation": ["required", "trim", "unique"],
         "url": "",
         "model":"name"
-    },{
+    }, {
         "name": "Order",
         "type": "text",
         "tableRef": "order",
@@ -34,11 +34,11 @@
     }],
     "action": [{
         "name": "submit",
-        "action": "submitHost"
+        "action": "submitHostType"
     }, {
         "name": "cancel",
-        "action": "cancelHost",
-        "stateName": "page({jsonName:'viewHost'})"
+        "action": "cancelHostType",
+        "stateName": "page({jsonName:'viewHostType'})"
     }],
     "apiCall": {
         "url": "hosttype/saveData",

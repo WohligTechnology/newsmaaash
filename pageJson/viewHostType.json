@@ -1,25 +1,49 @@
 {
-    "title": "Host a Party Type",
+    "title": " Host a Party Type",
     "desciption": "",
-    "page": "view",
+    "pageType": "view",
     "fields": [{
         "name": "Name",
         "isSort": "",
         "tableRef": "name"
-    },{
-      "name":"Order",
-      "isSort":"",
-      "tableRef":"order"
-      }],
+    }, {
+        "name": "Order",
+        "isSort": "",
+        "tableRef": "order"
+    }],
     "action": [{
         "name": "edit",
         "icon": "mode_edit",
         "color": "blue",
         "action": "redirect",
-        "jsonPage": "editHost",
+        "jsonPage": "editHostType",
         "fieldsToSend": ["_id"],
-        "callFindOne": "hosttype/getone"
+        "callFindOne": "hosttype/getOne"
+    }, {
+        "name": "delete",
+        "icon": "delete",
+        "color": "red",
+        "action": "apiCallConfirm",
+        "title": "Delete HostType",
+        "content": "Are you sure you want to delete hosttype?",
+        "api": "hosttype/delete",
+        "fieldsToSend": [{
+            "name": "_id",
+            "value": "_id"
+        }]
     }],
+    "button": [{
+        "name": "excelexport",
+        "icon": "print",
+        "color": "blue",
+        "action": "excelexport"
+    }, {
+        "name": "uploadcsv",
+        "icon": "delete",
+        "color": "red",
+        "action": "uploadcsv"
+    }],
+
     "apiCall": {
         "url": "hosttype/getLimited",
         "params": ""
