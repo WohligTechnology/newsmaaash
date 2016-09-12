@@ -1,18 +1,22 @@
 <section class="md-whiteframe-z1 users pb50">
     <md-list ng-cloak>
-      <md-input-container ng-if="json.addSearch">
-    <label>Select City</label>
-    <md-select ng-model="movie" ng-change="getAwardByMovie(movie)">
-      <md-option ng-repeat="dropdown in dropdownvalues" value="{{dropdown._id}}">
-        {{dropdown.name}}
-      </md-option>
-    </md-select>
-  </md-input-container>
-  <div class="search-input" ng-if="!json.showSearch">
-    <input ng-model="search" type="text">
-      <md-button class="md-raised md-primary" ng-click="searchClick(search);">Go</md-button>
-    </div>
-  <!-- <md-autocomplete
+        <md-input-container ng-if="json.addSearch">
+            <label>Select City</label>
+            <md-select ng-model="movie" ng-change="getAwardByMovie(movie)">
+                <md-option ng-repeat="dropdown in dropdownvalues" value="{{dropdown._id}}">
+                    {{dropdown.name}}
+                </md-option>
+            </md-select>
+        </md-input-container>
+        <div class="search-input" ng-if="!json.showSearch">
+            <input ng-model="search" type="text">
+            <md-button class="md-raised md-primary" ng-click="searchClick(search);">Go</md-button>
+        </div>
+        <div class="search-input" ng-if="json.title=='All Call Enquiries'">
+            <input ng-model="search" type="date">
+            <md-button class="md-raised md-primary" ng-click="searchClick(search);">Go</md-button>
+        </div>
+        <!-- <md-autocomplete
               md-search-text="searchForm.name"
               md-items="item in ctrl.querySearch(searchForm.name)"
               md-item-text="item.display"
@@ -57,7 +61,8 @@
         <!-- {{pageInfo}}{{pagination}} -->
         <div class="" ng-if="pageInfo.totalitems"></div>
         <uib-pagination force-ellipses="true" boundary-link-numbers="true" max-size="16" rotate="true" ng-show="json.tableData.length>=0" ng-if="!search" ng-change="getMoreResults(true)" total-items="pageInfo.totalitems" ng-model="pagination.pagenumber" items-per-page="pagination.pagesize"></uib-pagination>
-        <uib-pagination force-ellipses="true" boundary-link-numbers="true" max-size="16" rotate="true" ng-show="json.tableData.length>=0" ng-if="search && search !==''" ng-change="getMoreResults(true,search)" total-items="pageInfo.totalitems" ng-model="pagination.pagenumber" items-per-page="pagination.pagesize"></uib-pagination>
+        <uib-pagination force-ellipses="true" boundary-link-numbers="true" max-size="16" rotate="true" ng-show="json.tableData.length>=0" ng-if="search && search !==''" ng-change="getMoreResults(true,search)" total-items="pageInfo.totalitems" ng-model="pagination.pagenumber"
+            items-per-page="pagination.pagesize"></uib-pagination>
 
     </md-list>
 
