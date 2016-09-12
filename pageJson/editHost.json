@@ -27,6 +27,7 @@
         "name": "Type of Host a Party",
         "type": "selectFromTable",
         "tableRef": "hostAPartyType",
+        "model": "hostAPartyType",
         "option": "single",
         "placeholder": "Enter name",
         "id": "input1",
