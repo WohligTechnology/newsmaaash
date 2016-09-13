@@ -1,32 +1,39 @@
 {
     "title": "All Promotions",
     "desciption": "",
+    "showSearch": true,
+    "addSearch": true,
     "pageType": "view",
     "fields": [ {
-        "name": "Link",
+        "name": "Title",
         "isSort": "",
-        "tableRef": "link"
-    }, {
-        "name": "Order",
+        "tableRef": "hometext"
+    },{
+        "name": "Image",
         "isSort": "",
-        "tableRef": "order"
+        "tableRef": "image",
+        "type": "image"
+    },{
+        "name": "Status",
+        "isSort": "",
+        "tableRef": "status"
     }],
     "action": [{
         "name": "edit",
         "icon": "mode_edit",
         "color": "blue",
         "action": "redirect",
-        "jsonPage": "editPromotions",
+        "jsonPage": "editDeals",
         "fieldsToSend": ["_id"],
-        "callFindOne": "promotion/getOne"
+        "callFindOne": "exploresmash/findOne"
     }, {
         "name": "delete",
         "icon": "delete",
         "color": "red",
         "action": "apiCallConfirm",
-        "title": "Delete Promotions",
-        "content": "Are you sure you want to delete promotion?",
-        "api": "promotion/delete",
+        "title": "Delete Explore Smash",
+        "content": "Are you sure you want to delete explore smash?",
+        "api": "exploresmash/delete",
         "fieldsToSend": [{
             "name": "_id",
             "value": "_id"
@@ -45,8 +52,11 @@
     }],
 
     "apiCall": {
-        "url": "promotion/findLimited",
+        "url": "exploresmash/findLimitedPromotion",
         "params": ""
     },
+    "apiCallForSearch": {
+      "url": "city/getAll"
+  },
     "createButtonState": "page({jsonName:'createPromotions'})"
 }
