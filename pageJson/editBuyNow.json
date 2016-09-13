@@ -1,0 +1,149 @@
+{
+    "title": "Edit Buy Now",
+    "jsonPage": "viewExploreSmash",
+    "desciption": "",
+    "pageType": "edit",
+    "urlFields": ["_id"],
+    "fields": [{
+        "name": "Id",
+        "type": "hidden",
+        "tableRef": "_id",
+        "placeholder": "Enter id",
+        "id": "input1",
+        "validation": ["required", "trim", "unique"],
+        "url": "",
+        "model": "_id"
+    },{
+        "name": "City Name",
+        "type": "selectFromTable",
+        "option": "multiple",
+        "tableRef": "city",
+        "model": "city",
+        "placeholder": "Enter name",
+        "id": "input1",
+        "validation": ["required", "trim", "unique"],
+        "url": "city/getAll"
+    },{
+           "name": "Title",
+           "type": "text",
+           "tableRef": "hometext",
+           "model": "hometext",
+           "placeholder": "Enter text for home slider",
+           "id": "input5",
+           "validation": ["required", "trim", "unique"],
+           "url": ""
+       },{
+        "name": "Home Page Image",
+        "type": "image",
+        "tableRef": "image",
+        "model": "image",
+        "size": "596 x 358px",
+        "placeholder": "Enter Picture",
+        "id": "input4",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    }, {
+        "name": "Video Url",
+        "type": "text",
+        "tableRef": "video",
+        "model": "video",
+        "placeholder": "Enter Picture",
+        "id": "input4",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    }, {
+        "name": "Video Thumbnail",
+        "type": "image",
+        "tableRef": "videoThumbnail",
+        "model": "videoThumbnail",
+        "size": "",
+        "placeholder": "Enter Picture",
+        "id": "input4",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    },{
+           "name": "Order",
+           "type": "text",
+           "tableRef": "order",
+           "model": "order",
+           "placeholder": "Enter order",
+           "id": "input5",
+           "validation": ["required", "trim", "unique"],
+           "url": ""
+       },{
+           "name": "Status",
+           "type": "select",
+           "tableRef": "status",
+           "model": "status",
+
+           "placeholder": "Enter Is Home",
+           "id": "input3",
+           "validation": ["required", "trim", "unique"],
+           "url": [{
+               "value": true,
+               "name": "Enable"
+           }, {
+               "value": false,
+               "name": "Disable"
+           }]
+       }, {
+           "name": "Show Home",
+           "type": "select",
+           "tableRef": "isHome",
+           "model": "isHome",
+           "placeholder": "Enter Is Home",
+           "id": "input3",
+           "validation": ["required", "trim", "unique"],
+           "url": [{
+               "value": true,
+               "name": "Yes"
+           }, {
+               "value": false,
+               "name": "No"
+           }]
+       },{
+        "name": "Inside Page Image",
+        "type": "image",
+        "tableRef": "homeimage",
+        "model": "homeimage",
+            "size": "600 x 400 px",
+        "placeholder": "Enter Picture",
+        "id": "input4",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    },{
+         "name": "Description",
+         "type": "tinymce",
+         "tableRef": "description",
+         "model": "description",
+         "placeholder": "Enter description",
+         "id": "input5",
+         "validation": ["required", "trim", "unique"],
+         "url": ""
+     }, {
+        "name": "Price",
+        "type": "text",
+        "tableRef": "price",
+        "model": "price",
+        "placeholder": "Enter price",
+        "id": "input1",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    }],
+    "action": [{
+        "name": "submit",
+        "action": "submitExploreSmash"
+    }, {
+        "name": "cancel",
+        "action": "cancelExploreSmash",
+        "stateName": "page({jsonName:'viewExploreSmash'})"
+    }],
+    "apiCall": {
+        "url": "exploresmash/saveBuyNow",
+        "params": "_id"
+    },
+    "preApi": {
+        "url": "exploresmash/getOne",
+        "params": "_id"
+    }
+}

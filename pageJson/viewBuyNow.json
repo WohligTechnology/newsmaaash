@@ -1,0 +1,62 @@
+{
+    "title": "All Buy Now",
+    "desciption": "",
+    "showSearch": true,
+    "addSearch": true,
+    "pageType": "view",
+    "fields": [ {
+        "name": "Title",
+        "isSort": "",
+        "tableRef": "hometext"
+    },{
+        "name": "Image",
+        "isSort": "",
+        "tableRef": "image",
+        "type": "image"
+    },{
+        "name": "Status",
+        "isSort": "",
+        "tableRef": "status"
+    }],
+    "action": [{
+        "name": "edit",
+        "icon": "mode_edit",
+        "color": "blue",
+        "action": "redirect",
+        "jsonPage": "editBuyNow",
+        "fieldsToSend": ["_id"],
+        "callFindOne": "exploresmash/findOne"
+    }, {
+        "name": "delete",
+        "icon": "delete",
+        "color": "red",
+        "action": "apiCallConfirm",
+        "title": "Delete Explore Smash",
+        "content": "Are you sure you want to delete explore smash?",
+        "api": "exploresmash/delete",
+        "fieldsToSend": [{
+            "name": "_id",
+            "value": "_id"
+        }]
+    }],
+    "button": [{
+        "name": "excelexport",
+        "icon": "print",
+        "color": "blue",
+        "action": "excelexport"
+    }, {
+        "name": "uploadcsv",
+        "icon": "delete",
+        "color": "red",
+        "action": "uploadcsv"
+    }],
+
+    "apiCall": {
+        "url": "exploresmash/findLimitedBuyNow",
+        "params": ""
+    },
+    "apiCallForSearch": {
+      "url": "city/getAll"
+  },
+    "createButtonState": "page({jsonName:'createBuyNow'})"
+}
