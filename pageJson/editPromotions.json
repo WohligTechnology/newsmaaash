@@ -155,7 +155,7 @@
     }, {
         "name": "Assign Attractions",
         "action": "sidemenuRedirect",
-        "jsonPage": "viewMultipleAttraction",
+        "jsonPage": "viewMultipleAttractionPromotion",
         "fieldsToSend": [1],
         "callFindOne": "exploresmash/findRegistration"
     }]

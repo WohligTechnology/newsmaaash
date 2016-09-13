@@ -23,7 +23,7 @@
         "icon": "mode_edit",
         "color": "blue",
         "action": "redirect",
-        "jsonPage": "editDeals",
+        "jsonPage": "editPromotions",
         "fieldsToSend": ["_id"],
         "callFindOne": "exploresmash/findOne"
     }, {
