@@ -20,10 +20,38 @@
         "validation": ["required", "trim", "unique"],
         "url": ""
     }, {
-        "name": "Password",
-        "type": "password",
-        "tableRef": "password",
-        "placeholder": "Enter password",
+        "name": "Mobile",
+        "type": "text",
+        "tableRef": "mobile",
+        "model": "mobile",
+        "placeholder": "Enter mobile",
+        "id": "input5",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    }, {
+        "name": "Occasion",
+        "type": "text",
+        "tableRef": "occasion",
+        "model": "occasion",
+        "placeholder": "Enter occasion",
+        "id": "input5",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    }, {
+        "name": "How many people",
+        "type": "text",
+        "tableRef": "noofpeople",
+        "model": "noofpeople",
+        "placeholder": "Enter noofpeople",
+        "id": "input5",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    }, {
+        "name": "Date",
+        "type": "date",
+        "tableRef": "date",
+        "model": "date",
+        "placeholder": "Enter date",
         "id": "input5",
         "validation": ["required", "trim", "unique"],
         "url": ""

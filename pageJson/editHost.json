@@ -97,7 +97,7 @@
         "url": ""
     }, {
         "name": "Description",
-        "type": "tinymce",
+        "type": "textarea",
         "tableRef": "description",
         "model": "description",
 

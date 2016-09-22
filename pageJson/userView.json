@@ -20,6 +20,15 @@
         "isSort": "",
         "tableRef": "city.name"
     }],
+    "action": [{
+        "name": "edit",
+        "icon": "mode_edit",
+        "color": "blue",
+        "action": "redirect",
+        "jsonPage": "editUser",
+        "fieldsToSend": ["_id"],
+        "callFindOne": "user/getOne"
+    }],
     "button": [{
         "name": "excelexport",
         "icon": "print",

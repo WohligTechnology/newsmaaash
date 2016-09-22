@@ -1,6 +1,6 @@
 {
-    "title": "Edit Star",
-    "jsonPage": "viewStars",
+    "title": "Edit MediaGallery",
+    "jsonPage": "viewMediaGallery",
     "desciption": "",
     "pageType": "edit",
     "urlFields": ["_id"],
@@ -13,10 +13,10 @@
         "validation": ["required", "trim", "unique"],
         "url": "",
         "model": "_id"
-    }, {
+    },{
         "name": "City Name",
         "type": "selectFromTable",
-        "option": "multiple",
+        "option":"multiple",
         "tableRef": "city",
         "model": "city",
         "placeholder": "Enter name",
@@ -24,76 +24,64 @@
         "validation": ["required", "trim", "unique"],
         "url": "city/getAll"
     },{
-        "name": "Video Url",
-        "type": "text",
-        "tableRef": "url",
-        "model": "url",
-        "placeholder": "Enter url",
-        "id": "input1",
-        "validation": ["required", "trim", "unique"],
-        "url": ""
-    },{
-      "name": "Star Name",
-      "type": "text",
-      "tableRef": "title",
-      "placeholder": "Enter name",
-      "id": "input1",
-      "validation": ["required", "trim", "unique"],
-      "url": "",
-      "model":"title"
-    }, {
         "name": "Order",
         "type": "text",
         "tableRef": "order",
+        "model": "order",
         "placeholder": "Enter order",
         "id": "input5",
         "validation": ["required", "trim", "unique"],
-        "url": "",
-        "model":"order"
+        "url": ""
     }, {
+        "name": "Status",
+        "type": "select",
+        "tableRef": "status",
+        "model": "status",
+        "placeholder": "Enter status",
+        "id": "input3",
+        "validation": ["required", "trim", "unique"],
+        "url": [{
+            "value": true,
+            "name": "Enable"
+        }, {
+            "value": false,
+            "name": "Disable"
+        }]
+    },{
         "name": "Image",
         "type": "image",
         "tableRef": "image",
+        "model": "image",
+        "size":"279 x 305",
         "placeholder": "Enter City Picture",
         "id": "input4",
         "validation": ["required", "trim", "unique"],
-        "url": "",
-          "size": "940 x 564px",
-        "model": "image"
-    },{
+        "url": ""
+    } ,{
         "name": "Pop Up Image",
         "type": "image",
-        "model": "popupImage",
         "tableRef": "popupImage",
+        "model": "popupImage",
         "size":"940 x 564",
         "placeholder": "Enter City Picture",
         "id": "input4",
         "validation": ["required", "trim", "unique"],
         "url": ""
-    },{
-        "name": "Description",
-        "type": "textarea",
-        "model": "text",
-        "tableRef": "text",
-        "placeholder": "Enter text",
-        "id": "input5",
-        "validation": ["required", "trim", "unique"],
-        "url": ""
     }],
     "action": [{
         "name": "submit",
-        "action": "submitStar"
+        "action": "submitMediaGallery"
     }, {
         "name": "cancel",
-        "action": "cancelStar",
-        "stateName": "page({jsonName:'viewStar'})"
+        "action": "cancelMediaGallery",
+        "stateName": "page({jsonName:'viewMediaGallery'})"
     }],
     "apiCall": {
-        "url": "star/save",
+        "url": "mediagallery/save",
         "params": "_id"
     },
     "preApi": {
-        "url": "star/getOne",
+        "url": "mediagallery/getOne",
         "params": "_id"
     }
 }

@@ -63,5 +63,11 @@
         "jsonPage": "viewGallery",
         "fieldsToSend": [1],
         "callFindOne": "exploresmash/findGallery"
+    }, {
+        "name": "Assign Deals or Events or Promotion",
+        "action": "sidemenuRedirect",
+        "jsonPage": "viewMultipleAttraction",
+        "fieldsToSend": [1],
+        "callFindOne": "exploresmash/findRegistration"
     }]
 }

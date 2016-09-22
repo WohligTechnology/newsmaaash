@@ -32,97 +32,107 @@
         "url": "",
         "model": "email"
     }, {
-        "name": "Facebook",
+        "name": "Mobile",
         "type": "text",
-        "tableRef": "facebook",
-        "placeholder": "Enter Facebook",
-        "id": "input4",
-        "validation": ["required", "trim", "unique"],
-        "url": "",
-        "model": "facebook"
-    }, {
-        "name": "Twitter",
-        "type": "text",
-        "tableRef": "twitter",
-        "placeholder": "Enter twitter",
-        "id": "input4",
-        "validation": ["required", "trim", "unique"],
-        "url": "",
-        "model": "twitter"
-    }, {
-        "name": "Designation",
-        "type": "text",
-        "tableRef": "designation",
-        "placeholder": "Enter designation",
-        "id": "input4",
-        "validation": ["required", "trim", "unique"],
-        "url": "",
-        "model": "designation"
-    }, {
-        "name": "Points",
-        "type": "text",
-        "tableRef": "points",
-        "placeholder": "Enter points",
-        "id": "input4",
-        "validation": ["required", "trim", "unique"],
-        "url": "",
-        "model": "points"
-    },   {
-         "name": "Plan",
-         "type": "text",
-         "tableRef": "plan",
-         "placeholder": "Enter plan",
-         "id": "input4",
-         "validation": ["required", "trim", "unique"],
-         "url": "",
-           "model": "plan"
-     },{
-        "name": "Access Level",
-        "type": "select",
-        "tableRef": "accesslevel",
-        "placeholder": "Enter status",
-        "id": "input3",
-        "model": "accesslevel",
-        "validation": ["required", "trim", "unique"],
-        "url": [{
-            "value": "Admin",
-            "name": "Admin"
-        }, {
-            "value": "Operator",
-            "name": "Operator"
-        }, {
-            "value": "User",
-            "name": "User"
-        }]
-    }, {
-        "name": "Status",
-        "type": "select",
-        "tableRef": "status",
-        "placeholder": "Enter status",
-        "id": "input3",
-        "validation": ["required", "trim", "unique"],
-        "model": "status",
-        "url": [{
-            "value": true,
-            "name": "Enable"
-        }, {
-            "value": false,
-            "name": "Disable"
-        }]
-    }, {
-        "name": "Password",
-        "type": "password",
-        "tableRef": "password",
-        "placeholder": "Enter password",
+        "tableRef": "mobile",
+        "model": "mobile",
+        "placeholder": "Enter mobile",
         "id": "input5",
         "validation": ["required", "trim", "unique"],
-        "url": "",
-        "model": "password"
-    }],
-    "action": [{
-        "name": "submit",
-        "action": "submitUser"
+        "url": ""
     }, {
+        "name": "Occasion",
+        "type": "text",
+        "tableRef": "occasion",
+        "model": "occasion",
+        "placeholder": "Enter occasion",
+        "id": "input5",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    }, {
+        "name": "How many people",
+        "type": "text",
+        "tableRef": "noofpeople",
+        "model": "noofpeople",
+        "placeholder": "Enter noofpeople",
+        "id": "input5",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    }, {
+        "name": "Date",
+        "type": "date",
+        "tableRef": "date",
+        "model": "date",
+        "placeholder": "Enter date",
+        "id": "input5",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    }, {
+        "name": "City Name",
+        "type": "selectFromTable",
+        "option": "single",
+        "tableRef": "city",
+        "model": "city",
+        "placeholder": "Enter name",
+        "id": "input1",
+        "validation": ["required", "trim", "unique"],
+        "url": "city/getAll"
+    }, {
+        "name": "Games Selected",
+        "type": "text",
+        "tableRef": "arr",
+        "model": "arr",
+        "placeholder": "Enter games",
+        "id": "input5",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    },{
+        "name": "Food Style",
+        "type": "text",
+        "tableRef": "foodStyle",
+        "model": "foodStyle",
+        "placeholder": "Enter foodStyle",
+        "id": "input5",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    },{
+        "name": "Starter",
+        "type": "text",
+        "tableRef": "starter",
+        "model": "starter",
+        "placeholder": "Enter starter",
+        "id": "input5",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    },{
+        "name": "Main Course",
+        "type": "text",
+        "tableRef": "mainCourse",
+        "model": "mainCourse",
+        "placeholder": "Enter mainCourse",
+        "id": "input5",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    },{
+        "name": "Dessert",
+        "type": "text",
+        "tableRef": "dessert",
+        "model": "dessert",
+        "placeholder": "Enter dessert",
+        "id": "input5",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    },{
+        "name": "Alcohol",
+        "type": "text",
+        "tableRef": "alcohol",
+        "model": "alcohol",
+        "placeholder": "Enter alcohol",
+        "id": "input5",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    }],
+    "action": [ {
         "name": "cancel",
         "action": "cancelUser",
         "stateName": "page({jsonName:'userView'})"
@@ -132,7 +142,7 @@
         "params": "_id"
     },
     "preApi": {
-        "url": "user/getOne",
+        "url": "signup/getOne",
         "params": "_id"
     }
 }

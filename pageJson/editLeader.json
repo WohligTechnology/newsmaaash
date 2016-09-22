@@ -1,6 +1,6 @@
 {
-    "title": "Edit Star",
-    "jsonPage": "viewStars",
+    "title": "Edit Leader",
+    "jsonPage": "viewLeader",
     "desciption": "",
     "pageType": "edit",
     "urlFields": ["_id"],
@@ -13,10 +13,10 @@
         "validation": ["required", "trim", "unique"],
         "url": "",
         "model": "_id"
-    }, {
+    },{
         "name": "City Name",
         "type": "selectFromTable",
-        "option": "multiple",
+        "option":"multiple",
         "tableRef": "city",
         "model": "city",
         "placeholder": "Enter name",
@@ -24,76 +24,81 @@
         "validation": ["required", "trim", "unique"],
         "url": "city/getAll"
     },{
-        "name": "Video Url",
+        "name": "Name",
         "type": "text",
-        "tableRef": "url",
-        "model": "url",
-        "placeholder": "Enter url",
-        "id": "input1",
+        "tableRef": "name",
+        "model": "name",
+        "placeholder": "Enter name",
+        "id": "input5",
         "validation": ["required", "trim", "unique"],
         "url": ""
     },{
-      "name": "Star Name",
-      "type": "text",
-      "tableRef": "title",
-      "placeholder": "Enter name",
-      "id": "input1",
-      "validation": ["required", "trim", "unique"],
-      "url": "",
-      "model":"title"
-    }, {
         "name": "Order",
         "type": "text",
         "tableRef": "order",
+        "model": "order",
         "placeholder": "Enter order",
         "id": "input5",
         "validation": ["required", "trim", "unique"],
-        "url": "",
-        "model":"order"
+        "url": ""
     }, {
+        "name": "Status",
+        "type": "select",
+        "tableRef": "status",
+        "model": "status",
+        "placeholder": "Enter status",
+        "id": "input3",
+        "validation": ["required", "trim", "unique"],
+        "url": [{
+            "value": true,
+            "name": "Enable"
+        }, {
+            "value": false,
+            "name": "Disable"
+        }]
+    },{
         "name": "Image",
         "type": "image",
         "tableRef": "image",
+        "model": "image",
+        "size":"279 x 305",
         "placeholder": "Enter City Picture",
         "id": "input4",
         "validation": ["required", "trim", "unique"],
-        "url": "",
-          "size": "940 x 564px",
-        "model": "image"
+        "url": ""
     },{
-        "name": "Pop Up Image",
-        "type": "image",
-        "model": "popupImage",
-        "tableRef": "popupImage",
-        "size":"940 x 564",
-        "placeholder": "Enter City Picture",
-        "id": "input4",
+        "name": "Designation",
+        "type": "text",
+        "tableRef": "designation",
+        "model": "designation",
+        "placeholder": "Enter designation",
+        "id": "input5",
         "validation": ["required", "trim", "unique"],
         "url": ""
     },{
         "name": "Description",
         "type": "textarea",
-        "model": "text",
-        "tableRef": "text",
-        "placeholder": "Enter text",
+        "tableRef": "description",
+        "model": "description",
+        "placeholder": "Enter description",
         "id": "input5",
         "validation": ["required", "trim", "unique"],
         "url": ""
-    }],
+    } ],
     "action": [{
         "name": "submit",
-        "action": "submitStar"
+        "action": "submitLeader"
     }, {
         "name": "cancel",
-        "action": "cancelStar",
-        "stateName": "page({jsonName:'viewStar'})"
+        "action": "cancelLeader",
+        "stateName": "page({jsonName:'viewLeader'})"
     }],
     "apiCall": {
-        "url": "star/save",
+        "url": "leader/save",
         "params": "_id"
     },
     "preApi": {
-        "url": "star/getOne",
+        "url": "leader/getOne",
         "params": "_id"
     }
 }

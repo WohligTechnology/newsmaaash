@@ -1,4 +1,4 @@
-var adminurl = "http://104.154.89.21:82/";
+var adminurl = "http://104.155.129.33:82/";
 // var adminurl = "http://localhost:1337/";
 var uploadurl = adminurl + "upload/";
 var imgpath = uploadurl + "readFile";
@@ -24,6 +24,11 @@ var navigationservice = angular.module('navigationservice', [])
         name: "Landing Page",
         classis: "active",
         link: "#/page/viewConfig",
+        subnav: []
+    },{
+        name: "What's New",
+        classis: "active",
+        link: "#/page/viewWhatsNew",
         subnav: []
     }, {
         name: "Attraction",
@@ -61,7 +66,7 @@ var navigationservice = angular.module('navigationservice', [])
         link: "#/page/viewBuyNow",
         subnav: []
     }, {
-        name: "Stars at Smaaash",
+        name: "Media & Gallery",
         classis: "active",
         link: "#/page/viewStars",
         subnav: []
@@ -94,6 +99,11 @@ var navigationservice = angular.module('navigationservice', [])
         name: "Host a Party Type",
         classis: "active",
         link: "#/page/viewHostType",
+        subnav: []
+    },{
+        name: "Leadership",
+        classis: "active",
+        link: "#/page/viewLeader",
         subnav: []
     }];
 

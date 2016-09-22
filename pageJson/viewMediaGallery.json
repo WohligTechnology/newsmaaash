@@ -1,33 +1,34 @@
+
 {
-    "title": "All What's New",
+    "title": "All MediaGallery",
     "desciption": "",
     "pageType": "view",
     "fields": [ {
-        "name": "Title",
-        "isSort": "",
-        "tableRef": "hometext"
-    },{
         "name": "Image",
         "isSort": "",
         "tableRef": "image",
         "type": "image"
+    } ,{
+        "name": "Order",
+        "isSort": "",
+        "tableRef": "order"
     }],
     "action": [{
         "name": "edit",
         "icon": "mode_edit",
         "color": "blue",
         "action": "redirect",
-        "jsonPage": "editWhatsNew",
+        "jsonPage": "editMediaGallery",
         "fieldsToSend": ["_id"],
-        "callFindOne": "exploresmash/findOne"
+        "callFindOne": "mediagallery/getOne"
     }, {
         "name": "delete",
         "icon": "delete",
         "color": "red",
         "action": "apiCallConfirm",
-        "title": "Delete Explore Smash",
-        "content": "Are you sure you want to delete explore smash?",
-        "api": "exploresmash/delete",
+        "title": "Delete MediaGallery",
+        "content": "Are you sure you want to delete mediagallery?",
+        "api": "mediagallery/delete",
         "fieldsToSend": [{
             "name": "_id",
             "value": "_id"
@@ -46,8 +47,11 @@
     }],
 
     "apiCall": {
-        "url": "exploresmash/findLimitedWhatsNew",
+        "url": "mediagallery/findLimited",
         "params": ""
     },
-    "createButtonState": "page({jsonName:'createWhatsNew'})"
+    "apiCallForSearch": {
+      "url": "city/getAll"
+  },
+    "createButtonState": "page({jsonName:'createMediaGallery'})"
 }

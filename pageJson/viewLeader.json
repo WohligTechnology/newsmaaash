@@ -1,33 +1,37 @@
 {
-    "title": "All What's New",
+    "title": "All Leader",
     "desciption": "",
     "pageType": "view",
     "fields": [ {
-        "name": "Title",
+        "name": "Name",
         "isSort": "",
-        "tableRef": "hometext"
-    },{
+        "tableRef": "name"
+    }, {
         "name": "Image",
         "isSort": "",
         "tableRef": "image",
         "type": "image"
+    } ,{
+        "name": "Order",
+        "isSort": "",
+        "tableRef": "order"
     }],
     "action": [{
         "name": "edit",
         "icon": "mode_edit",
         "color": "blue",
         "action": "redirect",
-        "jsonPage": "editWhatsNew",
+        "jsonPage": "editLeader",
         "fieldsToSend": ["_id"],
-        "callFindOne": "exploresmash/findOne"
+        "callFindOne": "leader/getOne"
     }, {
         "name": "delete",
         "icon": "delete",
         "color": "red",
         "action": "apiCallConfirm",
-        "title": "Delete Explore Smash",
-        "content": "Are you sure you want to delete explore smash?",
-        "api": "exploresmash/delete",
+        "title": "Delete Leader",
+        "content": "Are you sure you want to delete leader?",
+        "api": "leader/delete",
         "fieldsToSend": [{
             "name": "_id",
             "value": "_id"
@@ -46,8 +50,11 @@
     }],
 
     "apiCall": {
-        "url": "exploresmash/findLimitedWhatsNew",
+        "url": "leader/findLimited",
         "params": ""
     },
-    "createButtonState": "page({jsonName:'createWhatsNew'})"
+    "apiCallForSearch": {
+      "url": "city/getAll"
+  },
+    "createButtonState": "page({jsonName:'createLeader'})"
 }

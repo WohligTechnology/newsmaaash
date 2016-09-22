@@ -7,7 +7,7 @@
         "name": "Icon",
         "isSort": "",
         "tableRef": "icon",
-        "type":"image"
+        "type": "image"
     }],
     "action": [{
         "name": "edit",
@@ -48,16 +48,23 @@
     },
     "createButtonState": "page({jsonName:'createMultipleAttraction'})",
     "sidemenu": [{
-        "name": "Deals and Packages Detail",
+        "name": "Attraction Detail",
         "action": "sidemenuRedirect",
-        "jsonPage": "editDeals",
+        "jsonPage": "editAttraction",
         "fieldsToSend": [1],
         "callFindOne": "exploresmash/getOne"
     }, {
-        "name": "Assign Attractions",
+        "name": "Gallery",
+        "action": "sidemenuRedirect",
+        "jsonPage": "viewGallery",
+        "fieldsToSend": [1],
+        "callFindOne": "exploresmash/findLimitedGallery"
+    }, {
+        "name": "Assign Deals or Events or Promotion",
         "action": "sidemenuRedirect",
         "jsonPage": "viewMultipleAttraction",
         "fieldsToSend": [1],
         "callFindOne": "exploresmash/findRegistration"
     }]
+
 }

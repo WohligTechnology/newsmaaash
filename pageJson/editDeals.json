@@ -145,18 +145,5 @@
     "preApi": {
         "url": "exploresmash/getOne",
         "params": "_id"
-    },
-    "sidemenu": [{
-        "name": "Deals and Packages Detail",
-        "action": "sidemenuRedirect",
-        "jsonPage": "editDeals",
-        "fieldsToSend": [1],
-        "callFindOne": "exploresmash/getOne"
-    }, {
-        "name": "Assign Attractions",
-        "action": "sidemenuRedirect",
-        "jsonPage": "viewMultipleAttraction",
-        "fieldsToSend": [1],
-        "callFindOne": "exploresmash/findRegistration"
-    }]
+    }
 }
