@@ -13,26 +13,26 @@
         "validation": ["required", "trim", "unique"],
         "url": "",
         "model": "_id"
-    },{
-       "name": "City Name",
-       "type": "selectFromTable",
-       "tableRef": "city",
-         "option": "multiple",
-       "model": "city",
-       "placeholder": "Enter name",
-       "id": "input1",
-       "validation": ["required", "trim", "unique"],
-       "url": "city/getAll"
-   },{
-           "name": "Title",
-           "type": "text",
-           "tableRef": "hometext",
-           "model": "hometext",
-           "placeholder": "Enter text for home slider",
-           "id": "input5",
-           "validation": ["required", "trim", "unique"],
-           "url": ""
-       },{
+    }, {
+        "name": "City Name",
+        "type": "selectFromTable",
+        "tableRef": "city",
+        "option": "multiple",
+        "model": "city",
+        "placeholder": "Enter name",
+        "id": "input1",
+        "validation": ["required", "trim", "unique"],
+        "url": "city/getAll"
+    }, {
+        "name": "Title",
+        "type": "text",
+        "tableRef": "hometext",
+        "model": "hometext",
+        "placeholder": "Enter text for home slider",
+        "id": "input5",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    }, {
         "name": "Image",
         "type": "image",
         "tableRef": "image",
@@ -42,7 +42,7 @@
         "id": "input4",
         "validation": ["required", "trim", "unique"],
         "url": ""
-    },{
+    }, {
         "name": "Show Home",
         "type": "select",
         "tableRef": "isHome",
@@ -57,7 +57,7 @@
             "value": false,
             "name": "No"
         }]
-    },{
+    }, {
         "name": "Status",
         "type": "select",
         "tableRef": "status",
@@ -73,133 +73,156 @@
             "value": false,
             "name": "Disable"
         }]
-    },{
-              "name": "Order",
-              "type": "text",
-              "tableRef": "order",
-              "model": "order",
-              "placeholder": "Enter text for home slider",
-              "id": "input5",
-              "validation": ["required", "trim", "unique"],
-              "url": ""
-        },
-        {
-            "name": "Game For",
-            "type": "select",
-            "option": "multiple",
-            "givecomment": "Eg. male,female,children",
-            "tableRef": "gamefor",
-            "model": "gamefor",
+    }, {
+        "name": "Order",
+        "type": "text",
+        "tableRef": "order",
+        "model": "order",
+        "placeholder": "Enter text for home slider",
+        "id": "input5",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    }, {
+        "name": "Game For",
+        "type": "select",
+        "option": "multiple",
+        "givecomment": "Eg. male,female,children",
+        "tableRef": "gamefor",
+        "model": "gamefor",
 
-            "placeholder": "Enter google link",
-            "id": "input5",
-            "validation": ["required", "trim", "unique"],
-            "url": [{
-                "value": 1,
-                "name": "Male"
-            }, {
-                "value": 2,
-                "name": "Female"
-            }, {
-                "value": 3,
-                "name": "Children"
-            }]
+        "placeholder": "Enter google link",
+        "id": "input5",
+        "validation": ["required", "trim", "unique"],
+        "url": [{
+            "value": 1,
+            "name": "Male"
         }, {
-           "name": "Inside Page Top Banner",
-           "type": "image",
-           "tableRef": "banner",
-           "model": "banner",
-           "placeholder": "Enter City Picture",
-           "id": "input4",
-           "validation": ["required", "trim", "unique"],
-           "url": "",
-             "size":"1600 x 899px"
-       }
-       ,{
-           "name": "Top Banner Video Url",
-           "type": "text",
-           "tableRef": "video",
-           "model": "video",
-           "placeholder": "Enter video",
-           "id": "input5",
-           "validation": ["required", "trim", "unique"],
-           "url": ""
-       },{
-           "name": "Top Banner Video Thumbnail",
-           "type": "image",
-           "tableRef": "videoThumbnail",
-           "model": "videoThumbnail",
-           "size":"",
+            "value": 2,
+            "name": "Female"
+        }, {
+            "value": 3,
+            "name": "Children"
+        }]
+    }, {
+        "name": "Game Type",
+        "type": "select",
+        "tableRef": "gameType",
+        "model": "gameType",
 
-           "placeholder": "Enter video",
-           "id": "input5",
-           "validation": ["required", "trim", "unique"],
-           "url": ""
-       }, {
-           "name": "Mobile Banner",
-           "type": "image",
-           "tableRef": "mobileBanner",
-           "model": "mobileBanner",
-           "placeholder": "Enter City Picture",
-           "id": "input4",
-           "validation": ["required", "trim", "unique"],
-           "url": "",
-           "size":""
-       },{
-            "name": "Game Description",
-            "type": "tinymce",
-            "tableRef": "description",
-            "model": "description",
-            "placeholder": "Enter description",
-            "id": "input5",
-            "validation": ["required", "trim", "unique"],
-            "url": ""
-        },{
-             "name": "Timing And Pricing",
-             "type": "tinymce",
-             "tableRef": "timingAndPricing",
-             "model": "timingAndPricing",
-             "placeholder": "Enter technology",
-             "id": "input5",
-             "validation": ["required", "trim", "unique"],
-             "url": ""
-         },{
-             "name": "Technology",
-             "type": "tinymce",
-             "tableRef": "technology",
-             "model": "technology",
-             "placeholder": "Enter technology",
-             "id": "input5",
-             "validation": ["required", "trim", "unique"],
-             "url": ""
-         },{
-              "name": "Deals & Packages",
-              "type": "textarea",
-              "tableRef": "deal",
-              "model": "deal",
-              "placeholder": "Enter deal",
-              "id": "input5",
-              "validation": ["required", "trim", "unique"],
-              "url": ""
-          },{
-              "name": "Current Event",
-              "type": "tinymce",
-              "tableRef": "currentEvent",
-              "model": "currentEvent",
-              "placeholder": "Enter current event",
-              "id": "input5",
-              "validation": ["required", "trim", "unique"],
-              "url": ""
-          },{
-               "name": "Promotion",
-               "type": "tinymce",
-               "tableRef": "promotion",
-               "model": "promotion",
-               "placeholder": "Enter promotion",
-               "id": "input5",
-               "validation": ["required", "trim", "unique"],
-               "url": ""
-           },{
+        "placeholder": "Enter Is Home",
+        "id": "input3",
+        "validation": ["required", "trim", "unique"],
+        "url": [{
+            "value": 1,
+            "name": "All"
+        }, {
+            "value": 2,
+            "name": "VR"
+        }, {
+            "value": 3,
+            "name": "Sports"
+        }, {
+            "value": 4,
+            "name": "Arcade"
+        }, {
+            "value": 5,
+            "name": "Others"
+        }]
+    }, {
+        "name": "Inside Page Top Banner",
+        "type": "image",
+        "tableRef": "banner",
+        "model": "banner",
+        "placeholder": "Enter City Picture",
+        "id": "input4",
+        "validation": ["required", "trim", "unique"],
+        "url": "",
+        "size": "1600 x 899px"
+    }, {
+        "name": "Top Banner Video Url",
+        "type": "text",
+        "tableRef": "video",
+        "model": "video",
+        "placeholder": "Enter video",
+        "id": "input5",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    }, {
+        "name": "Top Banner Video Thumbnail",
+        "type": "image",
+        "tableRef": "videoThumbnail",
+        "model": "videoThumbnail",
+        "size": "",
+
+        "placeholder": "Enter video",
+        "id": "input5",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    }, {
+        "name": "Mobile Banner",
+        "type": "image",
+        "tableRef": "mobileBanner",
+        "model": "mobileBanner",
+        "placeholder": "Enter City Picture",
+        "id": "input4",
+        "validation": ["required", "trim", "unique"],
+        "url": "",
+        "size": ""
+    }, {
+        "name": "Game Description",
+        "type": "tinymce",
+        "tableRef": "description",
+        "model": "description",
+        "placeholder": "Enter description",
+        "id": "input5",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    }, {
+        "name": "Timing And Pricing",
+        "type": "tinymce",
+        "tableRef": "timingAndPricing",
+        "model": "timingAndPricing",
+        "placeholder": "Enter technology",
+        "id": "input5",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    }, {
+        "name": "Technology",
+        "type": "tinymce",
+        "tableRef": "technology",
+        "model": "technology",
+        "placeholder": "Enter technology",
+        "id": "input5",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    }, {
+        "name": "Deals & Packages",
+        "type": "textarea",
+        "tableRef": "deal",
+        "model": "deal",
+        "placeholder": "Enter deal",
+        "id": "input5",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    }, {
+        "name": "Current Event",
+        "type": "tinymce",
+        "tableRef": "currentEvent",
+        "model": "currentEvent",
+        "placeholder": "Enter current event",
+        "id": "input5",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    }, {
+        "name": "Promotion",
+        "type": "tinymce",
+        "tableRef": "promotion",
+        "model": "promotion",
+        "placeholder": "Enter promotion",
+        "id": "input5",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    }, {
         "name": "Price",
         "type": "text",
         "tableRef": "price",
@@ -237,7 +260,7 @@
         "jsonPage": "viewGallery",
         "fieldsToSend": [1],
         "callFindOne": "exploresmash/findLimitedGallery"
-    },{
+    }, {
         "name": "Assign Deals or Events or Promotion",
         "action": "sidemenuRedirect",
         "jsonPage": "viewMultipleAttraction",
