@@ -20,6 +20,16 @@
 
             <md-button class="md-raised md-primary" ng-click="goToMedia();">Go To Media Gallery</md-button>
         </div>
+        <div class="row">
+            <div class="search-input" ng-show="json.title=='All Sponsor'">
+
+                <md-button class="md-raised md-primary" ng-click="goToEsteemPartner();">Go To Esteem Partner</md-button>
+            </div>
+            <div class="search-input" ng-show="json.title=='All Sponsor'">
+
+                <md-button class="md-raised md-primary" ng-click="goToContact();">Go To Contact Section</md-button>
+            </div>
+        </div>
         <div class="search-input" ng-show="json.title=='All Events'">
 
             <md-button class="md-raised md-primary" ng-click="goToEventRegistration();">View Event Registrations</md-button>
@@ -68,8 +78,11 @@
         </md-list-item>
         <!-- {{pageInfo}}{{pagination}} -->
         <div class="" ng-if="pageInfo.totalitems"></div>
-        <uib-pagination force-ellipses="true" boundary-link-numbers="true" max-size="16" rotate="true" ng-show="json.tableData.length>=0" ng-if="!search" ng-change="getMoreResults(true)" total-items="pageInfo.totalitems" ng-model="pagination.pagenumber" items-per-page="pagination.pagesize"></uib-pagination>
-        <uib-pagination force-ellipses="true" boundary-link-numbers="true" max-size="16" rotate="true" ng-show="json.tableData.length>=0" ng-if="search && search !==''" ng-change="getMoreResults(true,search)" total-items="pageInfo.totalitems" ng-model="pagination.pagenumber"
+        <uib-pagination force-ellipses="true" boundary-link-numbers="true" max-size="16" rotate="true" ng-show="json.tableData.length>=0"
+            ng-if="!search" ng-change="getMoreResults(true)" total-items="pageInfo.totalitems" ng-model="pagination.pagenumber"
+            items-per-page="pagination.pagesize"></uib-pagination>
+        <uib-pagination force-ellipses="true" boundary-link-numbers="true" max-size="16" rotate="true" ng-show="json.tableData.length>=0"
+            ng-if="search && search !==''" ng-change="getMoreResults(true,search)" total-items="pageInfo.totalitems" ng-model="pagination.pagenumber"
             items-per-page="pagination.pagesize"></uib-pagination>
 
     </md-list>

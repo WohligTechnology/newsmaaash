@@ -1,22 +1,19 @@
 {
-    "title": "All Slider",
+    "title": "All Contact",
     "desciption": "",
-    "showSearch": true,
-    "addSearch": true,
     "pageType": "view",
     "fields": [{
-        "name": "Title",
+        "name": "Name",
         "isSort": "",
-        "tableRef": "title"
+        "tableRef": "name"
     }, {
-        "name": "Banner",
+        "name": "Email",
         "isSort": "",
-        "tableRef": "image",
-        "type": "image"
+        "tableRef": "email"
     }, {
-        "name": "Status",
+        "name": "Mobile",
         "isSort": "",
-        "tableRef": "status"
+        "tableRef": "mobile"
     }, {
         "name": "Order",
         "isSort": "",
@@ -27,17 +24,17 @@
         "icon": "mode_edit",
         "color": "blue",
         "action": "redirect",
-        "jsonPage": "editSlider",
+        "jsonPage": "editContact",
         "fieldsToSend": ["_id"],
-        "callFindOne": "slider/getOne"
+        "callFindOne": "contact/getOne"
     }, {
         "name": "delete",
         "icon": "delete",
         "color": "red",
         "action": "apiCallConfirm",
-        "title": "Delete Slider",
-        "content": "Are you sure you want to delete slider?",
-        "api": "slider/delete",
+        "title": "Delete contact",
+        "content": "Are you sure you want to delete contact?",
+        "api": "contact/delete",
         "fieldsToSend": [{
             "name": "_id",
             "value": "_id"
@@ -56,11 +53,11 @@
     }],
 
     "apiCall": {
-        "url": "slider/findLimited",
+        "url": "contact/findLimited",
         "params": ""
     },
     "apiCallForSearch": {
         "url": "city/getAll"
     },
-    "createButtonState": "page({jsonName:'createSlider'})"
+    "createButtonState": "page({jsonName:'createcontact'})"
 }

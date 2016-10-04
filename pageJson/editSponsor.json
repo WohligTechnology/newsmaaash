@@ -1,6 +1,6 @@
 {
-    "title": "Edit Slider",
-    "jsonPage": "viewSlider",
+    "title": "Edit Sponsor",
+    "jsonPage": "viewsponsor",
     "desciption": "",
     "pageType": "edit",
     "urlFields": ["_id"],
@@ -14,30 +14,24 @@
         "url": "",
         "model": "_id"
     }, {
-        "name": "Type",
-        "type": "select",
-        "tableRef": "type",
-        "model": "type",
-        "placeholder": "Enter type",
-        "id": "input5",
-        "validation": ["required", "trim", "unique"],
-        "url": [{
-            "value": 1,
-            "name": "Home Slider"
-        }, {
-            "value": 2,
-            "name": "Host a Party"
-        }]
-    }, {
         "name": "City Name",
         "type": "selectFromTable",
-        "option": "multiple",
+        "option": "single",
         "tableRef": "city",
         "model": "city",
         "placeholder": "Enter name",
         "id": "input1",
         "validation": ["required", "trim", "unique"],
         "url": "city/getAll"
+    }, {
+        "name": "Name",
+        "type": "text",
+        "tableRef": "name",
+        "model": "name",
+        "placeholder": "Enter name",
+        "id": "input5",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
     }, {
         "name": "Order",
         "type": "text",
@@ -48,31 +42,22 @@
         "validation": ["required", "trim", "unique"],
         "url": ""
     }, {
-        "name": "Banner",
+        "name": "Content",
+        "type": "textarea",
+        "tableRef": "content",
+        "model": "content",
+        "placeholder": "Enter content",
+        "id": "input5",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    }, {
+        "name": "Image",
         "type": "image",
         "tableRef": "image",
         "model": "image",
-        "size": "1200px X 461px",
+        "size": "",
         "placeholder": "Enter City Picture",
         "id": "input4",
-        "validation": ["required", "trim", "unique"],
-        "url": ""
-    }, {
-        "name": "Title",
-        "type": "text",
-        "tableRef": "title",
-        "model": "title",
-        "placeholder": "Enter title",
-        "id": "input5",
-        "validation": ["required", "trim", "unique"],
-        "url": ""
-    }, {
-        "name": "Banner Click Url",
-        "type": "text",
-        "tableRef": "url",
-        "model": "url",
-        "placeholder": "Enter url",
-        "id": "input5",
         "validation": ["required", "trim", "unique"],
         "url": ""
     }, {
@@ -93,18 +78,18 @@
     }],
     "action": [{
         "name": "submit",
-        "action": "submitSlider"
+        "action": "submitsponsor"
     }, {
         "name": "cancel",
-        "action": "cancelSlider",
-        "stateName": "page({jsonName:'viewSlider'})"
+        "action": "cancelsponsor",
+        "stateName": "page({jsonName:'viewsponsor'})"
     }],
     "apiCall": {
-        "url": "slider/save",
+        "url": "sponsor/save",
         "params": "_id"
     },
     "preApi": {
-        "url": "slider/getOne",
+        "url": "sponsor/getOne",
         "params": "_id"
     }
 }

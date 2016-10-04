@@ -1,22 +1,16 @@
 {
-    "title": "All Slider",
+    "title": "All Sponsor",
     "desciption": "",
-    "showSearch": true,
-    "addSearch": true,
     "pageType": "view",
     "fields": [{
-        "name": "Title",
+        "name": "Name",
         "isSort": "",
-        "tableRef": "title"
+        "tableRef": "name"
     }, {
-        "name": "Banner",
+        "name": "Image",
         "isSort": "",
         "tableRef": "image",
         "type": "image"
-    }, {
-        "name": "Status",
-        "isSort": "",
-        "tableRef": "status"
     }, {
         "name": "Order",
         "isSort": "",
@@ -27,17 +21,17 @@
         "icon": "mode_edit",
         "color": "blue",
         "action": "redirect",
-        "jsonPage": "editSlider",
+        "jsonPage": "editSponsor",
         "fieldsToSend": ["_id"],
-        "callFindOne": "slider/getOne"
+        "callFindOne": "sponsor/getOne"
     }, {
         "name": "delete",
         "icon": "delete",
         "color": "red",
         "action": "apiCallConfirm",
-        "title": "Delete Slider",
-        "content": "Are you sure you want to delete slider?",
-        "api": "slider/delete",
+        "title": "Delete sponsor",
+        "content": "Are you sure you want to delete sponsor?",
+        "api": "sponsor/delete",
         "fieldsToSend": [{
             "name": "_id",
             "value": "_id"
@@ -56,11 +50,11 @@
     }],
 
     "apiCall": {
-        "url": "slider/findLimited",
+        "url": "sponsor/findLimited",
         "params": ""
     },
     "apiCallForSearch": {
         "url": "city/getAll"
     },
-    "createButtonState": "page({jsonName:'createSlider'})"
+    "createButtonState": "page({jsonName:'createsponsor'})"
 }

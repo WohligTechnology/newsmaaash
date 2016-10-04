@@ -1,22 +1,12 @@
 {
-    "title": "All Slider",
+    "title": "All Esteem",
     "desciption": "",
-    "showSearch": true,
-    "addSearch": true,
     "pageType": "view",
     "fields": [{
-        "name": "Title",
-        "isSort": "",
-        "tableRef": "title"
-    }, {
-        "name": "Banner",
+        "name": "Logo",
         "isSort": "",
         "tableRef": "image",
         "type": "image"
-    }, {
-        "name": "Status",
-        "isSort": "",
-        "tableRef": "status"
     }, {
         "name": "Order",
         "isSort": "",
@@ -27,17 +17,17 @@
         "icon": "mode_edit",
         "color": "blue",
         "action": "redirect",
-        "jsonPage": "editSlider",
+        "jsonPage": "editEsteem",
         "fieldsToSend": ["_id"],
-        "callFindOne": "slider/getOne"
+        "callFindOne": "esteem/getOne"
     }, {
         "name": "delete",
         "icon": "delete",
         "color": "red",
         "action": "apiCallConfirm",
-        "title": "Delete Slider",
-        "content": "Are you sure you want to delete slider?",
-        "api": "slider/delete",
+        "title": "Delete esteem",
+        "content": "Are you sure you want to delete esteem?",
+        "api": "esteem/delete",
         "fieldsToSend": [{
             "name": "_id",
             "value": "_id"
@@ -56,11 +46,11 @@
     }],
 
     "apiCall": {
-        "url": "slider/findLimited",
+        "url": "esteem/findLimited",
         "params": ""
     },
     "apiCallForSearch": {
         "url": "city/getAll"
     },
-    "createButtonState": "page({jsonName:'createSlider'})"
+    "createButtonState": "page({jsonName:'createesteem'})"
 }
