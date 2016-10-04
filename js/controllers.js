@@ -103,6 +103,11 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             jsonName: "viewMediaGallery"
         });
     };
+    $scope.goToSponsor = function () {
+        $state.go("page", {
+            jsonName: "viewSponsor"
+        });
+    };
     $scope.goToEsteemPartner = function () {
         $state.go("page", {
             jsonName: "viewEsteem"

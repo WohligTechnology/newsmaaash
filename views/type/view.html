@@ -20,15 +20,20 @@
 
             <md-button class="md-raised md-primary" ng-click="goToMedia();">Go To Media Gallery</md-button>
         </div>
-        <div class="row">
-            <div class="search-input" ng-show="json.title=='All Sponsor'">
+        <div class="search-input" ng-show="json.title=='All Contact'">
+            <md-button class="md-raised md-primary" ng-click="goToSponsor();">Go To Sponsor</md-button>
+            <md-button class="md-raised md-primary" ng-click="goToEsteemPartner();">Go To Esteem Partner</md-button>
 
-                <md-button class="md-raised md-primary" ng-click="goToEsteemPartner();">Go To Esteem Partner</md-button>
-            </div>
-            <div class="search-input" ng-show="json.title=='All Sponsor'">
+        </div>
+        <div class="search-input" ng-show="json.title=='All Esteem'">
 
-                <md-button class="md-raised md-primary" ng-click="goToContact();">Go To Contact Section</md-button>
-            </div>
+            <md-button class="md-raised md-primary" ng-click="goToSponsor();">Go To Sponsor</md-button>
+            <md-button class="md-raised md-primary" ng-click="goToContact();">Go To Contact Section</md-button>
+        </div>
+        <div class="search-input" ng-show="json.title=='All Sponsor'">
+
+            <md-button class="md-raised md-primary" ng-click="goToContact();">Go To Contact Section</md-button>
+            <md-button class="md-raised md-primary" ng-click="goToEsteemPartner();">Go To Esteem Partner</md-button>
         </div>
         <div class="search-input" ng-show="json.title=='All Events'">
 

@@ -41,6 +41,40 @@
         "validation": ["required", "trim", "unique"],
         "url": ""
     }, {
+        "name": "Profile Image",
+        "type": "image",
+        "tableRef": "profilePic",
+        "model": "profilePic",
+        "url": "",
+        "placeholder": "Enter Picture",
+        "id": "input4",
+        "validation": ["required", "trim", "unique"],
+        "size": ""
+    }, {
+        "name": "Address",
+        "type": "textarea",
+        "tableRef": "address",
+        "model": "address",
+        "placeholder": "Enter address",
+        "id": "input5",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    }, {
+        "name": "Gender",
+        "type": "select",
+        "tableRef": "gender",
+        "model": "gender",
+        "placeholder": "Enter gender",
+        "id": "input3",
+        "validation": ["required", "trim", "unique"],
+        "url": [{
+            "value": 1,
+            "name": "Male"
+        }, {
+            "value": 2,
+            "name": "Female"
+        }]
+    }, {
         "name": "Occasion",
         "type": "text",
         "tableRef": "occasion",
@@ -86,7 +120,7 @@
         "id": "input5",
         "validation": ["required", "trim", "unique"],
         "url": ""
-    },{
+    }, {
         "name": "Food Style",
         "type": "text",
         "tableRef": "foodStyle",
@@ -95,7 +129,7 @@
         "id": "input5",
         "validation": ["required", "trim", "unique"],
         "url": ""
-    },{
+    }, {
         "name": "Starter",
         "type": "text",
         "tableRef": "starter",
@@ -104,7 +138,7 @@
         "id": "input5",
         "validation": ["required", "trim", "unique"],
         "url": ""
-    },{
+    }, {
         "name": "Main Course",
         "type": "text",
         "tableRef": "mainCourse",
@@ -113,7 +147,7 @@
         "id": "input5",
         "validation": ["required", "trim", "unique"],
         "url": ""
-    },{
+    }, {
         "name": "Dessert",
         "type": "text",
         "tableRef": "dessert",
@@ -122,7 +156,7 @@
         "id": "input5",
         "validation": ["required", "trim", "unique"],
         "url": ""
-    },{
+    }, {
         "name": "Alcohol",
         "type": "text",
         "tableRef": "alcohol",
@@ -132,7 +166,7 @@
         "validation": ["required", "trim", "unique"],
         "url": ""
     }],
-    "action": [ {
+    "action": [{
         "name": "cancel",
         "action": "cancelUser",
         "stateName": "page({jsonName:'userView'})"
