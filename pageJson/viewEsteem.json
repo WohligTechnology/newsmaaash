@@ -52,5 +52,5 @@
     "apiCallForSearch": {
         "url": "city/getAll"
     },
-    "createButtonState": "page({jsonName:'createesteem'})"
+    "createButtonState": "page({jsonName:'createEsteem'})"
 }

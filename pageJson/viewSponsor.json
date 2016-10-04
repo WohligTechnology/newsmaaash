@@ -56,5 +56,5 @@
     "apiCallForSearch": {
         "url": "city/getAll"
     },
-    "createButtonState": "page({jsonName:'createsponsor'})"
+    "createButtonState": "page({jsonName:'createSponsor'})"
 }
