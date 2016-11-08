@@ -239,7 +239,13 @@ li.pagination-page.ng-scope.active a {
   color: white;
 }
 
+.ee {
+  display: inline-block;
+}
+
 .search-input {
+  display: inline-block;
+  width: 80%;
   padding: 0px 10px;
   input {
     width: 25%;

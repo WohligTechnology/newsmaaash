@@ -21,7 +21,7 @@ var navigationservice = angular.module('navigationservice', [])
         link: "#/page/viewSlider",
         subnav: []
     }, {
-        name: "Video Holder",
+        name: "Landing Page Video",
         classis: "active",
         link: "#/page/viewConfig",
         subnav: []
@@ -46,23 +46,28 @@ var navigationservice = angular.module('navigationservice', [])
         link: "#/page/viewHost",
         subnav: []
     }, {
-        name: "Host a Party Type",
+        name: "--Host a Party Type",
         classis: "active",
         link: "#/page/viewHostType",
         subnav: [],
         type: true
     }, {
-        name: "Assistance Form",
+        name: "--Assistance Form",
         classis: "active",
         link: "#/page/viewAssistance",
         subnav: []
     }, {
-        name: "Enquiries",
+        name: "--Enquiries",
         classis: "active",
         link: "#/page/viewEnquiry",
         subnav: []
     }, {
-        name: "Call Enquiries",
+        name: "--Customized packages",
+        classis: "active",
+        link: "#/page/viewCustom",
+        subnav: []
+    }, {
+        name: "--Get Called",
         classis: "active",
         link: "#/page/viewCallEnquiry",
         subnav: []

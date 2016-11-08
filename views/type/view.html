@@ -12,55 +12,57 @@
             <input ng-model="search" type="text">
             <md-button class="md-raised md-primary" ng-click="searchClick(search);">Go</md-button>
         </div>
-        <!-- <div class="search-input" ng-if="json.title=='All Call Enquiries'">
-            <input ng-model="search" type="date">
-            <md-button class="md-raised md-primary" ng-click="searchClick(search);">Go</md-button>
+        <div class="ee" ng-if="json.title=='Assistance' || json.title=='Enquiries' || json.title=='Subcribers' || json.title=='Customized Packages'|| json.title=='Call Enquiries' || json.title=='Registered Users'">
+            <md-button class="md-raised md-primary ">Excel Export</md-button>
+        </div>
+        <!-- <div class="search-input " ng-if="json.title=='All Call Enquiries' ">
+            <input ng-model="search " type="date ">
+            <md-button class="md-raised md-primary " ng-click="searchClick(search); ">Go</md-button>
         </div> -->
-        <div class="search-input" ng-show="json.title=='All Media'">
-            <md-button class="md-raised md-primary" ng-click="goToMedia();">Go To Media Gallery</md-button>
+        <div class="search-input " ng-show="json.title=='All Media' ">
+            <md-button class="md-raised md-primary " ng-click="goToMedia(); ">Go To Media Gallery</md-button>
         </div>
-        <div class="search-input" ng-show="json.title=='All Contact'">
-            <md-button class="md-raised md-primary" ng-click="goToSponsor();">Go To Sponsor</md-button>
-            <md-button class="md-raised md-primary" ng-click="goToEsteemPartner();">Go To Esteem Partner</md-button>
+        <div class="search-input " ng-show="json.title=='All Contact' ">
+            <md-button class="md-raised md-primary " ng-click="goToSponsor(); ">Go To Sponsor</md-button>
+            <md-button class="md-raised md-primary " ng-click="goToEsteemPartner(); ">Go To Esteem Partner</md-button>
         </div>
-        <div class="search-input" ng-show="json.title=='All Esteem'">
-            <md-button class="md-raised md-primary" ng-click="goToSponsor();">Go To Sponsor</md-button>
-            <md-button class="md-raised md-primary" ng-click="goToContact();">Go To Contact Section</md-button>
+        <div class="search-input " ng-show="json.title=='All Esteem' ">
+            <md-button class="md-raised md-primary " ng-click="goToSponsor(); ">Go To Sponsor</md-button>
+            <md-button class="md-raised md-primary " ng-click="goToContact(); ">Go To Contact Section</md-button>
         </div>
-        <div class="search-input" ng-show="json.title=='All Sponsor'">
-            <md-button class="md-raised md-primary" ng-click="goToContact();">Go To Contact Section</md-button>
-            <md-button class="md-raised md-primary" ng-click="goToEsteemPartner();">Go To Esteem Partner</md-button>
+        <div class="search-input " ng-show="json.title=='All Sponsor' ">
+            <md-button class="md-raised md-primary " ng-click="goToContact(); ">Go To Contact Section</md-button>
+            <md-button class="md-raised md-primary " ng-click="goToEsteemPartner(); ">Go To Esteem Partner</md-button>
         </div>
-        <div class="search-input" ng-show="json.title=='All Events'">
-            <md-button class="md-raised md-primary" ng-click="goToEventRegistration();">View Event Registrations</md-button>
+        <div class="search-input " ng-show="json.title=='All Events' ">
+            <md-button class="md-raised md-primary " ng-click="goToEventRegistration(); ">View Event Registrations</md-button>
         </div>
         <!-- <md-autocomplete
-              md-search-text="searchForm.name"
-              md-items="item in ctrl.querySearch(searchForm.name)"
-              md-item-text="item.display"
-              md-min-length="0"
-              placeholder="Search"
+              md-search-text="searchForm.name "
+              md-items="item in ctrl.querySearch(searchForm.name) "
+              md-item-text="item.display "
+              md-min-length="0 "
+              placeholder="Search "
               ng-model='search'
               >
           </md-autocomplete> -->
-        <div class="pull-right">
-            <a class="add-position" ui-sref="{{json.createButtonState}}" ng-if="!json.hideCreate">
-                <md-button class="md-fab md-primary md-mini give-bg" aria-label="Add Users">
-                    <md-icon class="fa fa-plus plus-icon"></md-icon>
+        <div class="pull-right ">
+            <a class="add-position " ui-sref="{{json.createButtonState}} " ng-if="!json.hideCreate ">
+                <md-button class="md-fab md-primary md-mini give-bg " aria-label="Add Users ">
+                    <md-icon class="fa fa-plus plus-icon "></md-icon>
                 </md-button>
             </a>
         </div>
-        <md-subheader class="md-no-sticky">{{json.title}}
+        <md-subheader class="md-no-sticky ">{{json.title}}
         </md-subheader>
         <md-divider></md-divider>
-        <md-list-item class="ls-head secondary-button-padding padlr16">
-            <p ng-repeat="field in json.fields">{{field.name}}</p>
-            <md-button aria-label="Expand" class="md-icon-button" ng-repeat="action in json.action">
-                <ng-md-icon class="" icon="{{action.icon}}" size="20" style="fill:black;"></ng-md-icon>
+        <md-list-item class="ls-head secondary-button-padding padlr16 ">
+            <p ng-repeat="field in json.fields ">{{field.name}}</p>
+            <md-button aria-label="Expand " class="md-icon-button " ng-repeat="action in json.action ">
+                <ng-md-icon class=" " icon="{{action.icon}} " size="20 " style="fill:black; "></ng-md-icon>
             </md-button>
         </md-list-item>
-        <div ng-hide="json.tableData.length>=0" class="loadingbox">
-            Loading...
+        <div ng-hide="json.tableData.length>=0" class="loadingbox"> Loading...
         </div>
         <md-list-item ng-show="json.tableData.length>=0" ng-repeat="result in json.tableData track by $index" class="secondary-button-padding padlr16">
             <p ng-repeat="field in json.fields" class="word-b">
