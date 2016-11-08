@@ -1,5 +1,5 @@
 {
-    "title": "All City",
+    "title": "Smaaash Cities",
     "desciption": "",
     "pageType": "view",
     "fields": [{
@@ -10,7 +10,7 @@
         "name": "Order",
         "isSort": "",
         "tableRef": "order"
-    },{
+    }, {
         "name": "Image",
         "isSort": "",
         "tableRef": "image",

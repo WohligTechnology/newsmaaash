@@ -1,12 +1,12 @@
 {
-    "title": "All Recharge Smaash Card",
+    "title": " Recharge Smaash Card",
     "desciption": "",
     "pageType": "view",
     "fields": [{
         "name": "City",
         "isSort": "",
         "tableRef": "city.name"
-    },{
+    }, {
         "name": "User",
         "isSort": "",
         "tableRef": "user.name"
@@ -14,7 +14,7 @@
         "name": "Name",
         "isSort": "",
         "tableRef": "name"
-    },{
+    }, {
         "name": "Amount",
         "isSort": "",
         "tableRef": "amount"

@@ -97,10 +97,9 @@
         "url": ""
     }, {
         "name": "Description",
-        "type": "textarea",
+        "type": "tinymce",
         "tableRef": "description",
         "model": "description",
-
         "placeholder": "Enter description",
         "id": "input5",
         "validation": ["required", "trim", "unique"],

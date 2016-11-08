@@ -1,8 +1,8 @@
 {
-    "title": "All Enquiries",
+    "title": " Enquiries",
     "desciption": "",
     "pageType": "view",
-      "hideCreate": true,
+    "hideCreate": true,
     "fields": [{
         "name": "Name",
         "isSort": "",

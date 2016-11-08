@@ -1,5 +1,5 @@
 {
-    "title": "All Timings",
+    "title": " Timings",
     "desciption": "",
     "pageType": "view",
     "sendIdWithCreate": true,
@@ -51,8 +51,8 @@
     }],
 
     "apiCall": {
-      "url": "exploresmash/findTiming",
-      "params": "_id"
+        "url": "exploresmash/findTiming",
+        "params": "_id"
     },
     "sidemenu": [{
         "name": "Attraction Details",

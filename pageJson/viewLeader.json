@@ -1,8 +1,8 @@
 {
-    "title": "All Leader",
+    "title": " Leaders",
     "desciption": "",
     "pageType": "view",
-    "fields": [ {
+    "fields": [{
         "name": "Name",
         "isSort": "",
         "tableRef": "name"
@@ -11,7 +11,7 @@
         "isSort": "",
         "tableRef": "image",
         "type": "image"
-    } ,{
+    }, {
         "name": "Order",
         "isSort": "",
         "tableRef": "order"
@@ -54,7 +54,7 @@
         "params": ""
     },
     "apiCallForSearch": {
-      "url": "city/getAll"
-  },
+        "url": "city/getAll"
+    },
     "createButtonState": "page({jsonName:'createLeader'})"
 }

@@ -1,8 +1,8 @@
 {
-    "title": "All Event Registration",
+    "title": " Event Registrations",
     "desciption": "",
     "pageType": "view",
-      "hideCreate": true,
+    "hideCreate": true,
     "fields": [{
         "name": "Name",
         "isSort": "",

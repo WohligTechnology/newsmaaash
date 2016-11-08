@@ -1,16 +1,16 @@
 {
-    "title": "Type",
+    "title": "Types",
     "desciption": "",
     "pageType": "view",
     "fields": [{
         "name": "Name",
         "isSort": "",
         "tableRef": "name"
-    },{
-      "name":"Order",
-      "isSort":"",
-      "tableRef":"order"
-      }],
+    }, {
+        "name": "Order",
+        "isSort": "",
+        "tableRef": "order"
+    }],
     "action": [{
         "name": "edit",
         "icon": "mode_edit",

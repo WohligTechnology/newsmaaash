@@ -1,5 +1,5 @@
 {
-    "title": "All Gallery",
+    "title": " Galleries",
     "desciption": "",
     "pageType": "view",
     "sendIdWithCreate": true,
@@ -7,7 +7,7 @@
         "name": "Image",
         "isSort": "",
         "tableRef": "image",
-        "type":"image"
+        "type": "image"
     }, {
         "name": "Order",
         "isSort": "",

@@ -1,0 +1,182 @@
+{
+    "title": "Edit User",
+    "jsonPage": "userView",
+    "desciption": "",
+    "pageType": "edit",
+    "urlFields": ["_id"],
+    "fields": [{
+        "name": "Id",
+        "type": "hidden",
+        "tableRef": "_id",
+        "placeholder": "Enter id",
+        "id": "input1",
+        "validation": ["required", "trim", "unique"],
+        "url": "",
+        "model": "_id"
+    }, {
+        "name": "Name",
+        "type": "text",
+        "tableRef": "name",
+        "placeholder": "Enter name",
+        "id": "input2",
+        "validation": ["required", "trim", "unique"],
+        "url": "",
+        "model": "name"
+    }, {
+        "name": "Email",
+        "type": "email",
+        "tableRef": "email",
+        "placeholder": "Enter Email",
+        "id": "input4",
+        "validation": ["required", "trim", "unique"],
+        "url": "",
+        "model": "email"
+    }, {
+        "name": "Mobile",
+        "type": "text",
+        "tableRef": "mobile",
+        "model": "mobile",
+        "placeholder": "Enter mobile",
+        "id": "input5",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    }, {
+        "name": "Profile Image",
+        "type": "image",
+        "tableRef": "profilePic",
+        "model": "profilePic",
+        "url": "",
+        "placeholder": "Enter Picture",
+        "id": "input4",
+        "validation": ["required", "trim", "unique"],
+        "size": ""
+    }, {
+        "name": "Address",
+        "type": "textarea",
+        "tableRef": "address",
+        "model": "address",
+        "placeholder": "Enter address",
+        "id": "input5",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    }, {
+        "name": "Gender",
+        "type": "select",
+        "tableRef": "gender",
+        "model": "gender",
+        "placeholder": "Enter gender",
+        "id": "input3",
+        "validation": ["required", "trim", "unique"],
+        "url": [{
+            "value": 1,
+            "name": "Male"
+        }, {
+            "value": 2,
+            "name": "Female"
+        }]
+    }, {
+        "name": "Occasion",
+        "type": "text",
+        "tableRef": "occasion",
+        "model": "occasion",
+        "placeholder": "Enter occasion",
+        "id": "input5",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    }, {
+        "name": "How many people",
+        "type": "text",
+        "tableRef": "noofpeople",
+        "model": "noofpeople",
+        "placeholder": "Enter noofpeople",
+        "id": "input5",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    }, {
+        "name": "Date",
+        "type": "date",
+        "tableRef": "date",
+        "model": "date",
+        "placeholder": "Enter date",
+        "id": "input5",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    }, {
+        "name": "City Name",
+        "type": "selectFromTable",
+        "option": "single",
+        "tableRef": "city",
+        "model": "city",
+        "placeholder": "Enter name",
+        "id": "input1",
+        "validation": ["required", "trim", "unique"],
+        "url": "city/getAll"
+    }, {
+        "name": "Games Selected",
+        "type": "text",
+        "tableRef": "arr",
+        "model": "arr",
+        "placeholder": "Enter games",
+        "id": "input5",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    }, {
+        "name": "Food Style",
+        "type": "text",
+        "tableRef": "foodStyle",
+        "model": "foodStyle",
+        "placeholder": "Enter foodStyle",
+        "id": "input5",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    }, {
+        "name": "Starter",
+        "type": "text",
+        "tableRef": "starter",
+        "model": "starter",
+        "placeholder": "Enter starter",
+        "id": "input5",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    }, {
+        "name": "Main Course",
+        "type": "text",
+        "tableRef": "mainCourse",
+        "model": "mainCourse",
+        "placeholder": "Enter mainCourse",
+        "id": "input5",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    }, {
+        "name": "Dessert",
+        "type": "text",
+        "tableRef": "dessert",
+        "model": "dessert",
+        "placeholder": "Enter dessert",
+        "id": "input5",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    }, {
+        "name": "Alcohol",
+        "type": "text",
+        "tableRef": "alcohol",
+        "model": "alcohol",
+        "placeholder": "Enter alcohol",
+        "id": "input5",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    }],
+    "action": [{
+        "name": "cancel",
+        "action": "cancelUser",
+        "stateName": "page({jsonName:'userView'})"
+    }],
+    "apiCall": {
+        "url": "user/save",
+        "params": "_id"
+    },
+    "preApi": {
+        "url": "signup/getOne",
+        "params": "_id"
+    }
+}

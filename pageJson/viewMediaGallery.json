@@ -1,14 +1,13 @@
-
 {
-    "title": "All MediaGallery",
+    "title": " MediaGallery",
     "desciption": "",
     "pageType": "view",
-    "fields": [ {
+    "fields": [{
         "name": "Image",
         "isSort": "",
         "tableRef": "image",
         "type": "image"
-    } ,{
+    }, {
         "name": "Order",
         "isSort": "",
         "tableRef": "order"
@@ -51,7 +50,7 @@
         "params": ""
     },
     "apiCallForSearch": {
-      "url": "city/getAll"
-  },
+        "url": "city/getAll"
+    },
     "createButtonState": "page({jsonName:'createMediaGallery'})"
 }

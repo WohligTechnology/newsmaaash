@@ -1,19 +1,19 @@
 {
-    "title": "All Deals and Packages",
+    "title": " Deals and Packages",
     "desciption": "",
     "showSearch": true,
     "addSearch": true,
     "pageType": "view",
-    "fields": [ {
+    "fields": [{
         "name": "Title",
         "isSort": "",
         "tableRef": "hometext"
-    },{
+    }, {
         "name": "Image",
         "isSort": "",
         "tableRef": "image",
         "type": "image"
-    },{
+    }, {
         "name": "Status",
         "isSort": "",
         "tableRef": "status"
@@ -56,7 +56,7 @@
         "params": ""
     },
     "apiCallForSearch": {
-      "url": "city/getAll"
-  },
+        "url": "city/getAll"
+    },
     "createButtonState": "page({jsonName:'createDeals'})"
 }

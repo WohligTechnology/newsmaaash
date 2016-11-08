@@ -1,5 +1,5 @@
 {
-    "title": "All Multiple Attraction",
+    "title": " Multiple Attractions",
     "desciption": "",
     "pageType": "view",
     "sendIdWithCreate": true,
@@ -7,7 +7,7 @@
         "name": "Icon",
         "isSort": "",
         "tableRef": "icon",
-        "type":"image"
+        "type": "image"
     }],
     "action": [{
         "name": "edit",

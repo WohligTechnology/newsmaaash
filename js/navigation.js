@@ -1,27 +1,27 @@
-var adminurl = "http://104.155.129.33:82/";
-// var adminurl = "http://localhost:82/";
+// var adminurl = "http://104.155.129.33:82/";
+var adminurl = "http://localhost:1337/";
 var uploadurl = adminurl + "upload/";
 var imgpath = uploadurl + "readFile";
 var navigationservice = angular.module('navigationservice', [])
 
 .factory('NavigationService', function ($http) {
     var navigation = [{
-        name: "Users",
+        name: "Registered Users",
         classis: "active",
         link: "#/page/userView",
         subnav: []
     }, {
-        name: "City",
+        name: "Smaaash Cities",
         classis: "active",
         link: "#/page/viewCity",
         subnav: []
     }, {
-        name: "Home Page Slider",
+        name: "Home Page Sliders",
         classis: "active",
         link: "#/page/viewSlider",
         subnav: []
     }, {
-        name: "Landing Page",
+        name: "Video Holder",
         classis: "active",
         link: "#/page/viewConfig",
         subnav: []
@@ -31,7 +31,7 @@ var navigationservice = angular.module('navigationservice', [])
         link: "#/page/viewWhatsNew",
         subnav: []
     }, {
-        name: "Attraction",
+        name: "Attractions",
         classis: "active",
         link: "#/page/viewAttraction",
         subnav: []
@@ -46,6 +46,26 @@ var navigationservice = angular.module('navigationservice', [])
         link: "#/page/viewHost",
         subnav: []
     }, {
+        name: "Host a Party Type",
+        classis: "active",
+        link: "#/page/viewHostType",
+        subnav: []
+    }, {
+        name: "Assistance Form",
+        classis: "active",
+        link: "#/page/viewAssistance",
+        subnav: []
+    }, {
+        name: "Enquiries",
+        classis: "active",
+        link: "#/page/viewEnquiry",
+        subnav: []
+    }, {
+        name: "Call Enquiries",
+        classis: "active",
+        link: "#/page/viewCallEnquiry",
+        subnav: []
+    }, {
         name: "Events",
         classis: "active",
         link: "#/page/viewEvents",
@@ -56,7 +76,7 @@ var navigationservice = angular.module('navigationservice', [])
         link: "#/page/viewFood",
         subnav: []
     }, {
-        name: "Promotion",
+        name: "Promotions",
         classis: "active",
         link: "#/page/viewPromotions",
         subnav: []
@@ -71,7 +91,7 @@ var navigationservice = angular.module('navigationservice', [])
         link: "#/page/viewStars",
         subnav: []
     }, {
-        name: "Subscribe",
+        name: "Subscribers",
         classis: "active",
         link: "#/page/viewSubscribe",
         subnav: []
@@ -79,26 +99,6 @@ var navigationservice = angular.module('navigationservice', [])
         name: "Type of Content",
         classis: "active",
         link: "#/page/viewType",
-        subnav: []
-    }, {
-        name: "Assistance Form",
-        classis: "active",
-        link: "#/page/viewAssistance",
-        subnav: []
-    }, {
-        name: "Enquiry",
-        classis: "active",
-        link: "#/page/viewEnquiry",
-        subnav: []
-    }, {
-        name: "Call Enquiries",
-        classis: "active",
-        link: "#/page/viewCallEnquiry",
-        subnav: []
-    }, {
-        name: "Host a Party Type",
-        classis: "active",
-        link: "#/page/viewHostType",
         subnav: []
     }, {
         name: "Leadership",

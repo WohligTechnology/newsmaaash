@@ -1,26 +1,25 @@
 {
-    "title": "All Landing Page",
+    "title": " Landing Page",
     "desciption": "",
     "pageType": "view",
-    "fields": [
-    {
+    "fields": [{
         "name": "City",
         "isSort": "",
         "tableRef": "city.name"
-    },{
+    }, {
         "name": "Video Title",
         "isSort": "",
         "tableRef": "videotitle"
-    },{
+    }, {
         "name": "Video Thumbnail",
         "isSort": "",
         "tableRef": "thumbnail",
-          "type":"image"
-    },{
+        "type": "image"
+    }, {
         "name": "Home Page Banner",
         "isSort": "",
         "tableRef": "homebanner",
-        "type":"image"
+        "type": "image"
     }],
     "action": [{
         "name": "edit",

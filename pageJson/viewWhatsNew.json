@@ -1,12 +1,12 @@
 {
-    "title": "All What's New",
+    "title": " What's New",
     "desciption": "",
     "pageType": "view",
-    "fields": [ {
+    "fields": [{
         "name": "Title",
         "isSort": "",
         "tableRef": "hometext"
-    },{
+    }, {
         "name": "Image",
         "isSort": "",
         "tableRef": "image",
