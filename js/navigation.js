@@ -49,7 +49,8 @@ var navigationservice = angular.module('navigationservice', [])
         name: "Host a Party Type",
         classis: "active",
         link: "#/page/viewHostType",
-        subnav: []
+        subnav: [],
+        type: true
     }, {
         name: "Assistance Form",
         classis: "active",

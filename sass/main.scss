@@ -3,7 +3,9 @@
 @import "../bower_components/angular-material/angular-material.min.css";
 @import "../bower_components/tinymce-dist/skins/lightgray/content.min.css";
 @import "../bower_components/tinymce-dist/skins/lightgray/skin.min.css";
-body {}
+body {
+  font-size: 14px!important;
+}
 
 img.loading {
   text-align: center;
@@ -303,6 +305,37 @@ input[type=file] {
 
 .purple-edit {
   fill: #662E8F !important;
+}
+
+.min-w {
+  .md-no-style {
+    position: relative;
+    padding: 0px 0px;
+    flex: 1 1 auto;
+    position: absolute;
+    min-height: 48px !important;
+  }
+  .md-list-item-inner {
+    &:before {
+      padding: 0px 12px;
+    }
+  }
+  a {
+    font-size: 20px !important;
+  }
+  div {
+    padding-left: 30px;
+    background-image: url("../img/fav.jpg");
+    background-repeat: no-repeat;
+    background-size: 6%;
+    background-position-x: 20px;
+    background-position-y: 18px;
+  }
+}
+
+.menu-list {
+  color: rgba(0, 0, 0, 0.54);
+  padding-left: 20px;
 }
 
 
