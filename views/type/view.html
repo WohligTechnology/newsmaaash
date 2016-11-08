@@ -17,26 +17,21 @@
             <md-button class="md-raised md-primary" ng-click="searchClick(search);">Go</md-button>
         </div> -->
         <div class="search-input" ng-show="json.title=='All Media'">
-
             <md-button class="md-raised md-primary" ng-click="goToMedia();">Go To Media Gallery</md-button>
         </div>
         <div class="search-input" ng-show="json.title=='All Contact'">
             <md-button class="md-raised md-primary" ng-click="goToSponsor();">Go To Sponsor</md-button>
             <md-button class="md-raised md-primary" ng-click="goToEsteemPartner();">Go To Esteem Partner</md-button>
-
         </div>
         <div class="search-input" ng-show="json.title=='All Esteem'">
-
             <md-button class="md-raised md-primary" ng-click="goToSponsor();">Go To Sponsor</md-button>
             <md-button class="md-raised md-primary" ng-click="goToContact();">Go To Contact Section</md-button>
         </div>
         <div class="search-input" ng-show="json.title=='All Sponsor'">
-
             <md-button class="md-raised md-primary" ng-click="goToContact();">Go To Contact Section</md-button>
             <md-button class="md-raised md-primary" ng-click="goToEsteemPartner();">Go To Esteem Partner</md-button>
         </div>
         <div class="search-input" ng-show="json.title=='All Events'">
-
             <md-button class="md-raised md-primary" ng-click="goToEventRegistration();">View Event Registrations</md-button>
         </div>
         <!-- <md-autocomplete
@@ -50,7 +45,7 @@
           </md-autocomplete> -->
         <div class="pull-right">
             <a class="add-position" ui-sref="{{json.createButtonState}}" ng-if="!json.hideCreate">
-                <md-button class="md-fab md-primary md-mini" aria-label="Add Users">
+                <md-button class="md-fab md-primary md-mini give-bg" aria-label="Add Users">
                     <md-icon class="fa fa-plus plus-icon"></md-icon>
                 </md-button>
             </a>
@@ -64,11 +59,9 @@
                 <ng-md-icon class="" icon="{{action.icon}}" size="20" style="fill:black;"></ng-md-icon>
             </md-button>
         </md-list-item>
-
         <div ng-hide="json.tableData.length>=0" class="loadingbox">
             Loading...
         </div>
-
         <md-list-item ng-show="json.tableData.length>=0" ng-repeat="result in json.tableData track by $index" class="secondary-button-padding padlr16">
             <p ng-repeat="field in json.fields">
                 <span ng-if="field.type!='image' && result|getValue:field.tableRef:field.type!=''">{{result|getValue:field.tableRef:field.type}}</span>
@@ -78,7 +71,7 @@
                 </span>
             </p>
             <md-button aria-label="Expand" class="md-icon-button" ng-repeat="action in json.action" ng-click="performAction(action,result)">
-                <ng-md-icon class="" icon="{{action.icon}}" size="20" style="fill:{{action.color}};"></ng-md-icon>
+                <ng-md-icon class="purple-edit" icon="{{action.icon}}" size="20" style="fill:{{action.color}};"></ng-md-icon>
             </md-button>
         </md-list-item>
         <!-- {{pageInfo}}{{pagination}} -->
@@ -89,9 +82,7 @@
         <uib-pagination force-ellipses="true" boundary-link-numbers="true" max-size="16" rotate="true" ng-show="json.tableData.length>=0"
             ng-if="search && search !==''" ng-change="getMoreResults(true,search)" total-items="pageInfo.totalitems" ng-model="pagination.pagenumber"
             items-per-page="pagination.pagesize"></uib-pagination>
-
     </md-list>
-
     <a class="add-position" ui-sref="{{json.createButtonState}}" ng-if="!json.hideCreate">
         <md-button class="md-fab md-fab-bottom-right md-primary" aria-label="Add Users">
             <md-icon class="fa fa-plus plus-icon"></md-icon>
