@@ -16,7 +16,8 @@
     }, {
         "name": "Status",
         "isSort": "",
-        "tableRef": "status"
+        "tableRef": "status",
+        "type": "status"
     }],
     "action": [{
         "name": "edit",

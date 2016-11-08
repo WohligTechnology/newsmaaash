@@ -1,13 +1,9 @@
 {
-    "title": "Registered Users",
+    "title": "Customized Packages",
     "hideCreate": true,
     "desciption": "",
     "pageType": "view",
     "fields": [{
-        "name": "Name",
-        "isSort": "",
-        "tableRef": "name"
-    }, {
         "name": "Email",
         "isSort": "",
         "tableRef": "email"
@@ -25,9 +21,9 @@
         "icon": "mode_edit",
         "color": "blue",
         "action": "redirect",
-        "jsonPage": "editUser",
+        "jsonPage": "editCustom",
         "fieldsToSend": ["_id"],
-        "callFindOne": "user/getOne"
+        "callFindOne": "Custom/getOne"
     }],
     "button": [{
         "name": "excelexport",
@@ -42,7 +38,7 @@
     }],
 
     "apiCall": {
-        "url": "signup/findLimited",
+        "url": "custom/findLimited",
         "params": ""
     }
 
