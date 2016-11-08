@@ -338,6 +338,14 @@ input[type=file] {
   padding-left: 20px;
 }
 
+.word-b {
+  display: inline-block;
+  width: 38px;
+  white-space: nowrap;
+  overflow: hidden !important;
+  text-overflow: ellipsis;
+}
+
 
 /*
 Copyright 2016 Google Inc. All Rights Reserved.
