@@ -25,22 +25,22 @@
             <input ng-model="search " type="date ">
             <md-button class="md-raised md-primary " ng-click="searchClick(search); ">Go</md-button>
         </div> -->
-        <div class="search-input " ng-show="json.title=='All Media' ">
+        <div class="search-input " ng-show="json.title=='Media' ">
             <md-button class="md-raised md-primary " ng-click="goToMedia(); ">Go To Media Gallery</md-button>
         </div>
-        <div class="search-input " ng-show="json.title=='All Contact' ">
+        <div class="search-input " ng-show="json.title=='Contacts'">
             <md-button class="md-raised md-primary " ng-click="goToSponsor(); ">Go To Sponsor</md-button>
             <md-button class="md-raised md-primary " ng-click="goToEsteemPartner(); ">Go To Esteem Partner</md-button>
         </div>
-        <div class="search-input " ng-show="json.title=='All Esteem' ">
+        <div class="search-input " ng-show="json.title=='Esteem' ">
             <md-button class="md-raised md-primary " ng-click="goToSponsor(); ">Go To Sponsor</md-button>
             <md-button class="md-raised md-primary " ng-click="goToContact(); ">Go To Contact Section</md-button>
         </div>
-        <div class="search-input " ng-show="json.title=='All Sponsor' ">
+        <div class="search-input " ng-show="json.title=='Sponsors' ">
             <md-button class="md-raised md-primary " ng-click="goToContact(); ">Go To Contact Section</md-button>
             <md-button class="md-raised md-primary " ng-click="goToEsteemPartner(); ">Go To Esteem Partner</md-button>
         </div>
-        <div class="search-input " ng-show="json.title=='All Events' ">
+        <div class="search-input " ng-show="json.title=='Events' ">
             <md-button class="md-raised md-primary " ng-click="goToEventRegistration(); ">View Event Registrations</md-button>
         </div>
         <!-- <md-autocomplete
