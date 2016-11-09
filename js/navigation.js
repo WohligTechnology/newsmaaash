@@ -57,12 +57,12 @@ var navigationservice = angular.module('navigationservice', [])
         link: "#/page/viewAssistance",
         subnav: []
     }, {
-        name: "--Enquiries",
+        name: "--Party Enquiries",
         classis: "active",
         link: "#/page/viewEnquiry",
         subnav: []
     }, {
-        name: "--Customized packages",
+        name: "--Cust. Packages",
         classis: "active",
         link: "#/page/viewCustom",
         subnav: []

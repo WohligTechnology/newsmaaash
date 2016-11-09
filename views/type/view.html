@@ -15,6 +15,12 @@
         <div class="ee" ng-if="json.title=='Assistance' || json.title=='Enquiries' || json.title=='Subcribers' || json.title=='Customized Packages'|| json.title=='Call Enquiries' || json.title=='Registered Users'">
             <md-button class="md-raised md-primary ">Excel Export</md-button>
         </div>
+        <div class="ee marg16" ng-if="json.title=='Assistance' || json.title=='Enquiries' || json.title=='Subcribers' || json.title=='Customized Packages'|| json.title=='Call Enquiries' || json.title=='Registered Users'">
+            <label><b>From Date</b></label>
+            <input type="date" class="md-raised md-primary " ng-model="fromDate">
+            <label><b>To Date</b></label>
+            <input type="date" class="md-raised md-primary " ng-model="toDate">
+        </div>
         <!-- <div class="search-input " ng-if="json.title=='All Call Enquiries' ">
             <input ng-model="search " type="date ">
             <md-button class="md-raised md-primary " ng-click="searchClick(search); ">Go</md-button>

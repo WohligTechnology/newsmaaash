@@ -327,7 +327,7 @@ input[type=file] {
     }
   }
   a {
-    font-size: 20px !important;
+    font-size: 18px !important;
   }
   div {
     padding-left: 17%;
@@ -337,6 +337,10 @@ input[type=file] {
     background-position-x: 20px;
     background-position-y: 18px;
   }
+}
+
+.marg16 {
+  margin: 16px;
 }
 
 .menu-list {
