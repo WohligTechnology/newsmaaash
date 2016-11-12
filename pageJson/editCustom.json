@@ -41,15 +41,6 @@
         "validation": ["required", "trim", "unique"],
         "url": ""
     }, {
-        "name": "Address",
-        "type": "textarea",
-        "tableRef": "address",
-        "model": "address",
-        "placeholder": "Enter address",
-        "id": "input5",
-        "validation": ["required", "trim", "unique"],
-        "url": ""
-    }, {
         "name": "Occasion",
         "type": "text",
         "tableRef": "occasion",
@@ -88,13 +79,14 @@
         "url": "city/getAll"
     }, {
         "name": "Games Selected",
-        "type": "text",
-        "tableRef": "arr",
-        "model": "arr",
+        "type": "selectFromTable",
+        "tableRef": "games",
+        "option": "multiple",
+        "model": "games",
         "placeholder": "Enter games",
         "id": "input5",
         "validation": ["required", "trim", "unique"],
-        "url": ""
+        "url": "exploresmash/getAllForDropDown"
     }, {
         "name": "Food Style",
         "type": "text",

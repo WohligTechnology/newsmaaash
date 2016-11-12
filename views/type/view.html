@@ -12,14 +12,63 @@
             <input ng-model="search" type="text">
             <md-button class="md-raised md-primary" ng-click="searchClick(search);">Go</md-button>
         </div>
-        <div class="ee" ng-if="json.title=='Assistance' || json.title=='Enquiries' || json.title=='Subcribers' || json.title=='Customized Packages'|| json.title=='Call Enquiries' || json.title=='Registered Users'">
-            <md-button class="md-raised md-primary ">Excel Export</md-button>
+        <div class="row">
+            <div class=" inputw search-input" ng-if="json.title=='Assistance'">
+                <md-button class="md-raised md-primary" ng-click="refreshPage();">RESET</md-button>
+            </div>
+            <!--<div ng-if="json.title=='Assistance'" class="pad16">
+            <label>Status</label>
+            <md-select ng-model="status" placeholder="Select Status">
+                <md-option ng-value="Pending">Pending</md-option>
+                <md-option ng-value="Attended">Attended</md-option>
+                <md-option ng-value="Not Attended">Not Attended</md-option>
+            </md-select>
+        </div>-->
+            <md-input-container class="inputw2" ng-if="json.title=='Assistance'">
+                <label>Select status</label>
+                <md-select ng-model="status" ng-change="getAssistance(status,null,null)">
+                    <md-option ng-repeat="status in statuses" value="{{status.value}}">
+                        {{status.name}}
+                    </md-option>
+                </md-select>
+            </md-input-container>
+        </div>
+        <div class="ee" ng-if="json.title=='Call Enquiries'">
+            <a href="{{adminurl}}callenquiry/exportCallEnquiriesExcel">
+                <md-button class="md-raised md-primary ">Excel Export</md-button>
+            </a>
+        </div>
+        <div class="ee" ng-if="json.title=='Assistance'">
+            <a href="{{adminurl}}assistance/exportAssistanceExcel">
+                <md-button class="md-raised md-primary ">Excel Export</md-button>
+            </a>
+        </div>
+        <div class="ee" ng-if="json.title=='Enquiries'">
+            <a href="{{adminurl}}enquiry/exportEnquiryExcel">
+                <md-button class="md-raised md-primary ">Excel Export</md-button>
+            </a>
+        </div>
+        <div class="ee" ng-if="json.title=='Subcribers'">
+            <a href="{{adminurl}}subscribe/exportSubscribeExcel">
+                <md-button class="md-raised md-primary ">Excel Export</md-button>
+            </a>
+        </div>
+        <div class="ee" ng-if="json.title=='Customized Packages'">
+            <a href="{{adminurl}}custom/exportCustomExcel">
+                <md-button class="md-raised md-primary ">Excel Export</md-button>
+            </a>
+        </div>
+        <div class="ee" ng-if="json.title=='Registered Users'">
+            <a href="{{adminurl}}signup/exportRegisteredUsersExcel">
+                <md-button class="md-raised md-primary ">Excel Export</md-button>
+            </a>
         </div>
         <div class="ee marg16" ng-if="json.title=='Assistance' || json.title=='Enquiries' || json.title=='Subcribers' || json.title=='Customized Packages'|| json.title=='Call Enquiries' || json.title=='Registered Users'">
             <label><b>From Date</b></label>
             <input type="date" class="md-raised md-primary " ng-model="fromDate">
             <label><b>To Date</b></label>
             <input type="date" class="md-raised md-primary " ng-model="toDate">
+            <md-button class="md-raised md-primary" ng-click="getAssistance(null,fromDate,toDate);">Go</md-button>
         </div>
         <!-- <div class="search-input " ng-if="json.title=='All Call Enquiries' ">
             <input ng-model="search " type="date ">

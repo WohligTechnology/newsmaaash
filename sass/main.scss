@@ -39,7 +39,7 @@ ng-md-icon {
 /* Start writing sass here */
 
 .md-button {
-  z-index: 100;
+  z-index: 70;
 }
 
 .content {
@@ -354,6 +354,19 @@ input[type=file] {
   white-space: nowrap;
   overflow: hidden !important;
   text-overflow: ellipsis;
+}
+
+.pad16 {
+  padding: 16px;
+  width: 112px;
+}
+
+.inputw {
+  width: 130px !important;
+}
+
+.inputw2 {
+  width: 200px !important;
 }
 
 

@@ -116,26 +116,12 @@ var navigationservice = angular.module('navigationservice', [])
         classis: "active",
         link: "#/page/viewSponsor",
         subnav: []
+    }, {
+        name: "Benefit from us",
+        classis: "active",
+        link: "#/page/viewBenefit",
+        subnav: []
     }];
-
-    // {
-    //     name: "Promotions",
-    //     classis: "active",
-    //     link: "#/page/viewPromotions",
-    //     subnav: []
-    // }, {
-    //     name: "Recharge Smaash Card",
-    //     classis: "active",
-    //     link: "#/page/viewRechargeSmaashCard",
-    //     subnav: []
-    // }
-    //   {
-    //      name: "What's New",
-    //      classis: "active",
-    //      link: "#/page/viewWhatsNew",
-    //      subnav: []
-    //  }
-
     return {
         getnav: function () {
             return navigation;
@@ -154,14 +140,24 @@ var navigationservice = angular.module('navigationservice', [])
             $http.post(adminurl + apiName, data).success(successCallback).error(errorCallback);
         },
         deleteProject: function (data, successCallback, errorCallback) {
-            $http.post(adminURL + "project/delete", data).success(successCallback).error(errorCallback);
+            $http.post(adminurl + "project/delete", data).success(successCallback).error(errorCallback);
         },
         findProjects: function (apiName, pagination, successCallback, errorCallback) {
             $http.post(adminurl + apiName, pagination).success(successCallback).error(errorCallback);
         },
         findOneProject: function (apiName, urlParams, successCallback, errorCallback) {
-            console.log(adminurl + apiName);
             $http.post(adminurl + apiName, urlParams).success(successCallback).error(errorCallback);
+        },
+        getAssistance: function (status, fromDate, toDate, pagenumber, successCallback, errorCallback) {
+            var urlParams = {};
+            urlParams.status = status;
+            urlParams.fromDate = fromDate;
+            urlParams.toDate = toDate;
+            urlParams.pagenumber = 1;
+            urlParams.pagesize = 10;
+            urlParams.search = '';
+            console.log(urlParams);
+            $http.post(adminurl + "assistance/findLimited", urlParams).success(successCallback).error(errorCallback);
         },
 
         getDropDown: function (apiName, successCallback, errorCallback) {
@@ -171,7 +167,23 @@ var navigationservice = angular.module('navigationservice', [])
             $http.post(adminurl + "register/login", data).success(successCallback).error(errorCallback);
         },
         deleteApi: function (data, successCallback, errorCallback) {
-            $http.post(adminURL + "api/delete", data).success(successCallback).error(errorCallback);
+            $http.post(adminurl + "api/delete", data).success(successCallback).error(errorCallback);
+        },
+        callExportApi: function (title, successCallback, errorCallback) {
+            if (title == "Assistance") {
+                var api = "assistance/exportAssistanceExcel";
+            } else if (title == "Enquiries") {
+                var api = "enquiry/exportEnquiryExcel";
+            } else if (title == "Subcribers") {
+                var api = "subscribe/exportSubscribeExcel";
+            } else if (title == "Customized Packages") {
+                var api = "custom/exportCustomExcel";
+            } else if (title == "Call Enquiries") {
+                var api = "callenquiry/exportCallEnquiriesExcel";
+            } else if (title == "Registered Users") {
+                var api = "signup/exportRegisteredUsersExcel";
+            }
+            $http.post(adminurl + api).success(successCallback).error(errorCallback);
         },
         logout: function (successCallback, errorCallback) {
             $http.post(adminurl + "register/logout").success(successCallback).error(errorCallback);

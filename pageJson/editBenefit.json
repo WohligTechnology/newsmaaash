@@ -1,0 +1,95 @@
+{
+    "title": "Edit Benefit",
+    "jsonPage": "viewBenefit",
+    "desciption": "",
+    "pageType": "edit",
+    "urlFields": ["_id"],
+    "fields": [{
+        "name": "Id",
+        "type": "hidden",
+        "tableRef": "_id",
+        "placeholder": "Enter id",
+        "id": "input1",
+        "validation": ["required", "trim", "unique"],
+        "url": "",
+        "model": "_id"
+    }, {
+        "name": "City Name",
+        "type": "selectFromTable",
+        "option": "multiple",
+        "tableRef": "city",
+        "model": "city",
+        "placeholder": "Enter name",
+        "id": "input1",
+        "validation": ["required", "trim", "unique"],
+        "url": "city/getAll"
+    }, {
+        "name": "Name",
+        "type": "text",
+        "tableRef": "name",
+        "model": "name",
+        "placeholder": "Enter name",
+        "id": "input5",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    }, {
+        "name": "Order",
+        "type": "text",
+        "tableRef": "order",
+        "model": "order",
+        "placeholder": "Enter order",
+        "id": "input5",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    }, {
+        "name": "Status",
+        "type": "select",
+        "tableRef": "status",
+        "model": "status",
+        "placeholder": "Enter status",
+        "id": "input3",
+        "validation": ["required", "trim", "unique"],
+        "url": [{
+            "value": true,
+            "name": "Enable"
+        }, {
+            "value": false,
+            "name": "Disable"
+        }]
+    }, {
+        "name": "Image",
+        "type": "image",
+        "tableRef": "image",
+        "model": "image",
+        "size": "279 x 305",
+        "placeholder": "Enter City Picture",
+        "id": "input4",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    }, {
+        "name": "Description",
+        "type": "textarea",
+        "tableRef": "description",
+        "model": "description",
+        "placeholder": "Enter description",
+        "id": "input5",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    }],
+    "action": [{
+        "name": "submit",
+        "action": "submitBenefit"
+    }, {
+        "name": "cancel",
+        "action": "cancelBenefit",
+        "stateName": "page({jsonName:'viewBenefit'})"
+    }],
+    "apiCall": {
+        "url": "Benefit/save",
+        "params": "_id"
+    },
+    "preApi": {
+        "url": "Benefit/getOne",
+        "params": "_id"
+    }
+}

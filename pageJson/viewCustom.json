@@ -4,6 +4,10 @@
     "desciption": "",
     "pageType": "view",
     "fields": [{
+        "name": "Name",
+        "isSort": "",
+        "tableRef": "name"
+    }, {
         "name": "Email",
         "isSort": "",
         "tableRef": "email"

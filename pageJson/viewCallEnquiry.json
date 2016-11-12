@@ -5,17 +5,17 @@
     "addSearch": true,
     "pageType": "view",
     "fields": [{
-        "name": "City",
-        "isSort": "",
-        "tableRef": "city.name"
-    }, {
         "name": "Name",
         "isSort": "",
         "tableRef": "name"
     }, {
-        "name": "Date",
+        "name": "City",
         "isSort": "",
-        "tableRef": "date",
+        "tableRef": "city.name"
+    }, {
+        "name": "Timestamp",
+        "isSort": "",
+        "tableRef": "timestamp",
         "type": "longdate"
     }, {
         "name": "Mobile",

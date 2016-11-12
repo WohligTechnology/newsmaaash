@@ -1,5 +1,5 @@
-var adminURL = "http://wohlig.io:81/";
-var mockURL = adminURL + "callApi/";
+// var adminURL = "http://wohlig.io:81/";
+// var mockURL = adminurl + "callApi/";
 var search = '';
 
 angular.module('phonecatControllers', ['templateservicemod', 'navigationservice', 'ngSanitize', 'ngMaterial', 'ngMdIcons', 'ui.sortable', 'angular-clipboard', 'imageupload', 'ui.bootstrap', 'ui.tinymce'])
@@ -55,7 +55,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.pageChanged = function () {
         $log.log('Page changed to: ' + $scope.currentPage);
     };
-
+    $scope.adminurl = adminurl;
     $scope.maxSize = 5;
     $scope.bigTotalItems = 175;
     $scope.bigCurrentPage = 1;
@@ -182,7 +182,6 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             _.each($scope.json.fields, function (n) {
                 if (n.type == "selectFromTable") {
                     NavigationService.getDropDown(n.url, function (data) {
-                        console.log(data);
                         n.dropdownvalues = [];
                         if (data) {
                             for (var i = 0; i < data.data.length; i++) {
@@ -203,11 +202,9 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             });
         } else if (data.pageType == "edit" || data.pageType == "tableview") {
 
-            console.log(urlParams);
             NavigationService.findOneProject($scope.json.preApi.url, urlParams, function (data) {
-                console.log(data);
+
                 $scope.json.editData = data.data;
-                console.log($scope.json.editData);
                 _.each($scope.json.fields, function (n) {
                     if (n.type == "table") {
                         $scope.subTableData = $scope.json.editData[n.model];
@@ -225,7 +222,6 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             _.each($scope.json.fields, function (n) {
                 if (n.type == "selectFromTable") {
                     NavigationService.getDropDown(n.url, function (data) {
-                        console.log(data);
                         n.dropdownvalues = [];
                         if (data) {
                             for (var i = 0; i < data.data.length; i++) {
@@ -252,31 +248,26 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             $scope.apiName = $scope.json.apiCall.url;
 
             var pageno = 1;
-            console.log($stateParams.no);
             if ($stateParams.no) {
                 pageno = parseInt($stateParams.no);
             }
             if ($stateParams.search) {
                 $scope.search = $stateParams.search;
-                console.log($scope.search);
             }
             $scope.pagination = {
                 "search": $scope.search,
                 "pagenumber": pageno,
                 "pagesize": 10
             };
-            console.log($scope.pagination);
             // SIDE MENU DATA
 
             $scope.pagination1 = {};
             if (urlid1) {
-                console.log('urlid1', urlid1);
                 if ($scope.json.sendIdWithCreate) {
                     $scope.json.createButtonState = $scope.json.createButtonState.split("'" + "})").join("¢" + urlid1 + "'" + "})");
                     // $scope.json.createButtonState = $scope.json.createButtonState.split("%25C2%").join("%C2%");
                     // $scope.json.createButtonState = $scope.json.createButtonState.split("%25A2").join("%A2");
                 }
-                console.log($scope.json.createButtonState);
                 $scope.api1 = $scope.json.sidemenu[1].callFindOne;
                 if ($scope.json.sidemenu[1].sendParam && $scope.json.sidemenu[1].sendParam !== '') {
                     $scope.pagination1._id = urlid1;
@@ -290,15 +281,30 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             $scope.pageInfo = {
                 totalitems: 5000
             };
+
+            $scope.statuses = [{
+                "name": "All",
+                "value": ""
+            }, {
+                "name": "Pending",
+                "value": "Pending"
+            }, {
+                "name": "Attended",
+                "value": "Attended"
+            }, {
+                "name": "Not Attended",
+                "value": "Not Attended"
+            }]
             $scope.getMoreResults = function (value, search) {
                 $scope.search = search;
                 $scope.value = value;
                 if (value) {
-                    console.log($scope.search);
                     if ($scope.search === undefined) {
                         $scope.search = $stateParams.search;
                         console.log($scope.search);
                     }
+
+
                     $state.go("pageno", {
                         no: $scope.pagination.pagenumber,
                         jsonName: $stateParams.jsonName,
@@ -312,9 +318,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                     } else {
                         $scope.pagination.search = '';
                     }
-                    console.log($scope.pagination);
                     NavigationService.findProjects($scope.apiName, $scope.pagination, function (findData) {
-                        console.log(findData);
                         if (findData.value !== false) {
                             if (findData.data && findData.data.data && findData.data.data.length > 0) {
                                 $scope.pageInfo.lastpage = findData.data.totalpages;
@@ -336,9 +340,19 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 }
 
             };
+            var pagenumber = $scope.pagination.pagenumber;
+            console.log(pagenumber);
             $scope.getMoreResults();
-
-            //SEARCH DROP dropDownName
+            $scope.getAssistance = function (status, fromDate, toDate, pagenumber) {
+                    console.log(pagenumber);
+                    NavigationService.getAssistance(status, fromDate, toDate, pagenumber, function (data) {
+                            console.log(data);
+                        },
+                        function () {
+                            console.log("Fail");
+                        });
+                }
+                //SEARCH DROP dropDownName
 
             // get select fields dropdown
             if ($scope.json.apiCallForSearch) {
@@ -359,10 +373,54 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                     console.log("Fail");
                 });
             }
-
+            $scope.callExportApi = function (title) {
+                NavigationService.callExportApi(title, function (data) {
+                    console.log(data);
+                }, function () {
+                    console.log("Fail");
+                });
+            }
+            $scope.refreshPage = function () {
+                window.location.reload();
+            }
             $scope.getAwardByMovie = function (movieid) {
                 //
                 $scope.pagination._id = movieid;
+                $scope.apiName = $scope.json.apiCall.url;
+                $scope.pageInfo = {
+                    totalitems: 5000
+                };
+                NavigationService.findProjects($scope.apiName, $scope.pagination, function (findData) {
+                    console.log(findData);
+                    if (findData.value !== false) {
+                        if (findData.data && findData.data.data && findData.data.data.length > 0) {
+                            $scope.pageInfo.lastpage = findData.data.totalpages;
+                            $scope.pageInfo.pagenumber = findData.data.pagenumber;
+                            $scope.pageInfo.totalitems = $scope.pagination.pagesize * findData.data.totalpages;
+                            $scope.json.tableData = findData.data.data;
+                        } else {
+                            $scope.json.tableData = [];
+                            $scope.pageInfo.totalitems = 0;
+                        }
+                    } else {
+                        $scope.json.tableData = [];
+                        $scope.pageInfo.totalitems = 0;
+                    }
+                    console.log($scope.pagination);
+                }, function () {
+                    console.log("Fail");
+                });
+
+            };
+            $scope.getAssistance = function (status, fromDate, toDate) {
+                //
+                if (status !== null) {
+                    $scope.pagination.status = status;
+                } else {
+                    $scope.pagination.fromDate = fromDate;
+                    $scope.pagination.toDate = toDate;
+                }
+
                 $scope.apiName = $scope.json.apiCall.url;
                 $scope.pageInfo = {
                     totalitems: 5000
