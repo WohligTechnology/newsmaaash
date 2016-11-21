@@ -13,7 +13,7 @@
         "validation": ["required", "trim", "unique"],
         "url": "",
         "model": "_id"
-    },{
+    }, {
         "name": "City Name",
         "type": "text",
         "tableRef": "name",
@@ -21,7 +21,7 @@
         "id": "input1",
         "validation": ["required", "trim", "unique"],
         "url": "",
-        "model":"name"
+        "model": "name"
     }, {
         "name": "Order",
         "type": "text",
@@ -30,7 +30,7 @@
         "id": "input2",
         "validation": ["required", "trim", "unique"],
         "url": "",
-        "model":"order"
+        "model": "order"
     }, {
         "name": "Branch Id",
         "type": "text",
@@ -49,7 +49,7 @@
         "id": "input4",
         "validation": ["required", "trim", "unique"],
         "url": ""
-    },{
+    }, {
         "name": "Photo",
         "type": "text",
         "model": "Photo",
@@ -66,7 +66,7 @@
         "id": "input4",
         "validation": ["required", "trim", "unique"],
         "url": "",
-        "model":"facebook"
+        "model": "facebook"
     }, {
         "name": "Instagram",
         "type": "text",
@@ -75,7 +75,7 @@
         "id": "input4",
         "validation": ["required", "trim", "unique"],
         "url": "",
-        "model":"instagram"
+        "model": "instagram"
     }, {
         "name": "Twitter",
         "type": "text",
@@ -84,22 +84,32 @@
         "id": "input4",
         "validation": ["required", "trim", "unique"],
         "url": "",
-        "model":"twitter"
+        "model": "twitter"
     }, {
         "name": "Image",
         "type": "image",
         "tableRef": "image",
-        "size":"162px X 132px",
+        "size": "162px X 132px",
         "placeholder": "Enter City Picture",
         "id": "input4",
         "validation": ["required", "trim", "unique"],
         "url": "",
         "model": "image"
-    },{
+    }, {
+        "name": "Logo",
+        "type": "image",
+        "tableRef": "logo",
+        "model": "logo",
+        "size": "250px X 107px",
+        "placeholder": "Enter City Picture",
+        "id": "input4",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    }, {
         "name": "PDF",
         "type": "image",
         "tableRef": "pdf",
-        "size":"",
+        "size": "",
         "placeholder": "Enter City Picture",
         "id": "input4",
         "validation": ["required", "trim", "unique"],

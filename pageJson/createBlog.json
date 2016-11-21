@@ -1,32 +1,38 @@
 {
-    "title": "Edit Benefit",
-    "jsonPage": "viewBenefit",
+    "title": "Create Blog",
+    "jsonPage": "viewBlog",
     "desciption": "",
-    "pageType": "edit",
-    "urlFields": ["_id"],
+    "pageType": "create",
     "fields": [{
-        "name": "Id",
-        "type": "hidden",
-        "tableRef": "_id",
-        "placeholder": "Enter id",
+        "name": "City Name",
+        "type": "selectFromTable",
+        "option": "multiple",
+        "tableRef": "city",
+        "placeholder": "Enter name",
         "id": "input1",
         "validation": ["required", "trim", "unique"],
-        "url": "",
-        "model": "_id"
+        "url": "city/getAll"
     }, {
         "name": "Name",
         "type": "text",
         "tableRef": "name",
-        "model": "name",
-        "placeholder": "Enter name",
+        "placeholder": "Enter text for home slider",
         "id": "input5",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    }, {
+        "name": "Image",
+        "type": "image",
+        "tableRef": "image",
+        "size": "360 x 190px",
+        "placeholder": "Enter Picture",
+        "id": "input4",
         "validation": ["required", "trim", "unique"],
         "url": ""
     }, {
         "name": "Order",
         "type": "text",
         "tableRef": "order",
-        "model": "order",
         "placeholder": "Enter order",
         "id": "input5",
         "validation": ["required", "trim", "unique"],
@@ -35,8 +41,7 @@
         "name": "Status",
         "type": "select",
         "tableRef": "status",
-        "model": "status",
-        "placeholder": "Enter status",
+        "placeholder": "Enter Is Home",
         "id": "input3",
         "validation": ["required", "trim", "unique"],
         "url": [{
@@ -47,20 +52,26 @@
             "name": "Disable"
         }]
     }, {
-        "name": "Image",
+        "name": "Banner",
         "type": "image",
-        "tableRef": "image",
-        "model": "image",
-        "size": "279 x 305",
-        "placeholder": "Enter City Picture",
+        "tableRef": "banner",
+        "size": "750 x 400 px",
+        "placeholder": "Enter Picture",
         "id": "input4",
         "validation": ["required", "trim", "unique"],
         "url": ""
     }, {
+        "name": "Date",
+        "type": "date",
+        "tableRef": "date",
+        "placeholder": "Enter price",
+        "id": "input1",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    }, {
         "name": "Description",
-        "type": "textarea",
+        "type": "tinymce",
         "tableRef": "description",
-        "model": "description",
         "placeholder": "Enter description",
         "id": "input5",
         "validation": ["required", "trim", "unique"],
@@ -68,18 +79,13 @@
     }],
     "action": [{
         "name": "submit",
-        "action": "submitBenefit"
+        "action": "submitBlog"
     }, {
         "name": "cancel",
-        "action": "cancelBenefit",
-        "stateName": "page({jsonName:'viewBenefit'})"
+        "stateName": "page({jsonName:'viewBlog'})"
     }],
+
     "apiCall": {
-        "url": "Benefit/save",
-        "params": "_id"
-    },
-    "preApi": {
-        "url": "Benefit/getOne",
-        "params": "_id"
+        "url": "Blog/save"
     }
 }

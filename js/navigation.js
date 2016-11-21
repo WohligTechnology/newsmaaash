@@ -121,6 +121,11 @@ var navigationservice = angular.module('navigationservice', [])
         classis: "active",
         link: "#/page/viewBenefit",
         subnav: []
+    }, {
+        name: "Blog",
+        classis: "active",
+        link: "#/page/viewBlog",
+        subnav: []
     }];
     return {
         getnav: function () {

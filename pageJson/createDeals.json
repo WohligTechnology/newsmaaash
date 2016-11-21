@@ -69,6 +69,20 @@
             "name": "Disable"
         }]
     }, {
+        "name": "Show Buynow Button",
+        "type": "select",
+        "tableRef": "showBuyNow",
+        "placeholder": "Enter Is Home",
+        "id": "input3",
+        "validation": ["required", "trim", "unique"],
+        "url": [{
+            "value": true,
+            "name": "Yes"
+        }, {
+            "value": false,
+            "name": "No"
+        }]
+    }, {
         "name": "Show Home",
         "type": "select",
         "tableRef": "isHome",

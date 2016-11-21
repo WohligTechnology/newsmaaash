@@ -58,6 +58,21 @@
             "name": "Disable"
         }]
     }, {
+        "name": "Show Buynow Button",
+        "type": "select",
+        "tableRef": "showBuyNow",
+        "model": "showBuyNow",
+        "placeholder": "Enter Is Home",
+        "id": "input3",
+        "validation": ["required", "trim", "unique"],
+        "url": [{
+            "value": true,
+            "name": "Yes"
+        }, {
+            "value": false,
+            "name": "No"
+        }]
+    }, {
         "name": "Show Home",
         "type": "select",
         "tableRef": "isHome",
@@ -71,6 +86,24 @@
         }, {
             "value": false,
             "name": "No"
+        }]
+    }, {
+        "name": "Select Event Type",
+        "type": "select",
+        "tableRef": "eventType",
+        "model": "eventType",
+        "placeholder": "Enter Event Type",
+        "id": "input3",
+        "validation": ["required", "trim", "unique"],
+        "url": [{
+            "value": "Event",
+            "name": "Event"
+        }, {
+            "value": "Tournament",
+            "name": "Tournament"
+        }, {
+            "value": "Challenges",
+            "name": "Challenges"
         }]
     }, {
         "name": "Inside Page Image",
@@ -120,7 +153,7 @@
         "id": "input5",
         "validation": ["required", "trim", "unique"],
         "url": ""
-    },{
+    }, {
         "name": "Deal Description",
         "type": "tinymce",
         "tableRef": "deal",

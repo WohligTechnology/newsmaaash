@@ -1,0 +1,67 @@
+{
+    "title": "Blogs",
+    "desciption": "",
+    "showSearch": true,
+    "addSearch": true,
+    "pageType": "view",
+    "fields": [{
+        "name": "Name",
+        "isSort": "",
+        "tableRef": "name"
+    }, {
+        "name": "Image",
+        "isSort": "",
+        "tableRef": "image",
+        "type": "image"
+    }, {
+        "name": "Status",
+        "isSort": "",
+        "tableRef": "status",
+        "type": "status"
+    }, {
+        "name": "Order",
+        "isSort": "",
+        "tableRef": "order"
+    }],
+    "action": [{
+        "name": "edit",
+        "icon": "mode_edit",
+        "color": "blue",
+        "action": "redirect",
+        "jsonPage": "editBlog",
+        "fieldsToSend": ["_id"],
+        "callFindOne": "blog/getOne"
+    }, {
+        "name": "delete",
+        "icon": "delete",
+        "color": "red",
+        "action": "apiCallConfirm",
+        "title": "Delete Explore Smash",
+        "content": "Are you sure you want to delete blog?",
+        "api": "blog/delete",
+        "fieldsToSend": [{
+            "name": "_id",
+            "value": "_id"
+        }]
+    }],
+    "button": [{
+        "name": "excelexport",
+        "icon": "print",
+        "color": "blue",
+        "action": "excelexport"
+    }, {
+        "name": "uploadcsv",
+        "icon": "delete",
+        "color": "red",
+        "action": "uploadcsv"
+    }],
+
+    "apiCall": {
+        "url": "blog/findLimitedForBackend",
+        "params": ""
+    },
+    "apiCallForSearch": {
+        "url": "city/getAll"
+    },
+    "createButtonState": "page({jsonName:'createBlog'})"
+}
