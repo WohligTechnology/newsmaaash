@@ -92,6 +92,15 @@
         "validation": ["required", "trim", "unique"],
         "url": ""
     }, {
+        "name": "Branch Package ID",
+        "type": "text",
+        "tableRef": "BranchPackageID",
+        "model": "BranchPackageID",
+        "placeholder": "Enter BranchPackageID",
+        "id": "input5",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    }, {
         "name": "Description",
         "type": "tinymce",
         "tableRef": "description",
