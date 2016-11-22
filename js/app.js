@@ -7,7 +7,7 @@ var firstapp = angular.module('firstapp', [
     'imageupload'
 ]);
 
-firstapp.config(function($stateProvider, $urlRouterProvider, $httpProvider) {
+firstapp.config(function ($stateProvider, $urlRouterProvider, $httpProvider) {
 
     // for http request with session
     $httpProvider.defaults.withCredentials = true;
@@ -45,22 +45,22 @@ firstapp.config(function($stateProvider, $urlRouterProvider, $httpProvider) {
     })
 
     .state('page', {
-        url: "/page/:jsonName",
-        templateUrl: "views/template.html",
-        controller: 'jsonViewCtrl'
-    })
-    .state('pageno', {
-        url: "/page/:jsonName/:no/:search",
-        templateUrl: "views/template.html",
-        controller: 'jsonViewCtrl'
-    });
+            url: "/page/:jsonName",
+            templateUrl: "views/template.html",
+            controller: 'jsonViewCtrl'
+        })
+        .state('pageno', {
+            url: "/page/:jsonName/:no/:search",
+            templateUrl: "views/template.html",
+            controller: 'jsonViewCtrl'
+        });
 
     $urlRouterProvider.otherwise("/login");
 
 });
 
-firstapp.filter('uploadpath', function() {
-    return function(input, width, height, style) {
+firstapp.filter('uploadpath', function () {
+    return function (input, width, height, style) {
         var other = "";
         if (width && width !== "") {
             other += "&width=" + width;
@@ -77,12 +77,12 @@ firstapp.filter('uploadpath', function() {
     };
 });
 
-firstapp.filter('getValue', function($filter) {
-    return function(input, keyVal, type) {
+firstapp.filter('getValue', function ($filter) {
+    return function (input, keyVal, type) {
         if (keyVal) {
             var keyArr = keyVal.split(".");
             var returnValue = input;
-            _.each(keyArr, function(n) {
+            _.each(keyArr, function (n) {
                 returnValue = returnValue[n];
             });
 
@@ -90,14 +90,17 @@ firstapp.filter('getValue', function($filter) {
                 console.log('in date');
                 // return new Date(returnValue);
                 return $filter("date")(returnValue, "medium");
-            }if (type == "longdate") {
+            }
+            if (type == "longdate") {
                 console.log('in date');
                 // return new Date(returnValue);
                 return $filter("date")(returnValue, "longDate");
-            }if(type == "time"){
-              console.log('in time');
-              return $filter("date")(returnValue, "shortTime");
-            } if (type != "image") {
+            }
+            if (type == "time") {
+                console.log('in time');
+                return $filter("date")(returnValue, "shortTime");
+            }
+            if (type != "image") {
                 return returnValue;
             } else {
                 return $filter("uploadpath")(returnValue, 100, 100, "fill");
@@ -108,25 +111,102 @@ firstapp.filter('getValue', function($filter) {
 });
 
 
-firstapp.directive('imageonload', function() {
+firstapp.directive('imageonload', function () {
     return {
         restrict: 'A',
-        link: function(scope, element, attrs) {
-            element.bind('load', function() {
+        link: function (scope, element, attrs) {
+            element.bind('load', function () {
                 scope.$apply(attrs.imageonload);
             });
         }
     };
 });
 
-firstapp.directive('uploadImage', function($http, $filter) {
+// firstapp.directive('uploadImage', function($http, $filter) {
+//     return {
+//         templateUrl: 'views/directive/uploadFile.html',
+//         scope: {
+//             model: '=ngModel',
+//             callback: "=ngCallback"
+//         },
+//         link: function($scope, element, attrs) {
+//             $scope.isMultiple = false;
+//             $scope.inObject = false;
+//             if (attrs.multiple || attrs.multiple === "") {
+//                 $scope.isMultiple = true;
+//                 $("#inputImage").attr("multiple", "ADD");
+//             }
+//             if (attrs.noView || attrs.noView === "") {
+//                 $scope.noShow = true;
+//             }
+//             if ($scope.model) {
+//                 if (_.isArray($scope.model)) {
+//                     $scope.image = [];
+//                     _.each($scope.model, function(n) {
+//                         $scope.image.push({
+//                             url: $filter("uploadpath")(n)
+//                         });
+//                     });
+//                 } else {
+//                     $scope.image = {};
+//                     $scope.image.url = $filter("uploadpath")($scope.model);
+//                 }
+
+//             }
+//             if (attrs.inobj || attrs.inobj === "") {
+//                 $scope.inObject = true;
+//             }
+//             $scope.clearOld = function() {
+//                 $scope.model = [];
+//             };
+//             $scope.upload = function(image) {
+//                 var Template = this;
+//                 image.hide = true;
+//                 var formData = new FormData();
+//                 formData.append('file', image.file, image.name);
+//                 $http.post(uploadurl, formData, {
+//                     headers: {
+//                         'Content-Type': undefined
+//                     },
+//                     transformRequest: angular.identity
+//                 }).success(function(data) {
+//                     console.log("success");
+//                     if ($scope.callback) {
+//                         $scope.callback(data);
+//                     } else {
+//                         if ($scope.isMultiple) {
+//                             if ($scope.inObject) {
+//                                 $scope.model.push({
+//                                     "image": data.data[0]
+//                                 });
+//                             } else {
+//                                 $scope.model.push(data.data[0]);
+//                             }
+//                         } else {
+//                             $scope.model = data.data[0];
+//                         }
+//                     }
+//                 });
+//             };
+//         }
+//     };
+// });
+
+firstapp.directive('uploadImage', function ($http, $filter) {
     return {
         templateUrl: 'views/directive/uploadFile.html',
         scope: {
             model: '=ngModel',
-            callback: "=ngCallback"
+            callback: "=ngCallback",
+            disabled: "=ngDisabled"
         },
-        link: function($scope, element, attrs) {
+        link: function ($scope, element, attrs) {
+
+            $scope.showImage = function () {
+                console.log($scope.image);
+            };
+
+
             $scope.isMultiple = false;
             $scope.inObject = false;
             if (attrs.multiple || attrs.multiple === "") {
@@ -136,27 +216,33 @@ firstapp.directive('uploadImage', function($http, $filter) {
             if (attrs.noView || attrs.noView === "") {
                 $scope.noShow = true;
             }
+
+            $scope.$watch("image", function (newVal, oldVal) {
+                if (newVal && newVal.file) {
+                    $scope.uploadNow(newVal);
+                }
+            });
+
             if ($scope.model) {
                 if (_.isArray($scope.model)) {
                     $scope.image = [];
-                    _.each($scope.model, function(n) {
+                    _.each($scope.model, function (n) {
                         $scope.image.push({
-                            url: $filter("uploadpath")(n)
+                            url: n
                         });
                     });
-                } else {
-                    $scope.image = {};
-                    $scope.image.url = $filter("uploadpath")($scope.model);
                 }
 
             }
             if (attrs.inobj || attrs.inobj === "") {
                 $scope.inObject = true;
             }
-            $scope.clearOld = function() {
+            $scope.clearOld = function () {
                 $scope.model = [];
             };
-            $scope.upload = function(image) {
+            $scope.uploadNow = function (image) {
+                $scope.uploadStatus = "uploading";
+
                 var Template = this;
                 image.hide = true;
                 var formData = new FormData();
@@ -166,11 +252,11 @@ firstapp.directive('uploadImage', function($http, $filter) {
                         'Content-Type': undefined
                     },
                     transformRequest: angular.identity
-                }).success(function(data) {
-                    console.log("success");
+                }).success(function (data) {
                     if ($scope.callback) {
                         $scope.callback(data);
                     } else {
+                        $scope.uploadStatus = "uploaded";
                         if ($scope.isMultiple) {
                             if ($scope.inObject) {
                                 $scope.model.push({
@@ -188,19 +274,18 @@ firstapp.directive('uploadImage', function($http, $filter) {
         }
     };
 });
-
-firstapp.directive('img', function($compile, $parse) {
+firstapp.directive('img', function ($compile, $parse) {
 
     return {
         restrict: 'E',
         replace: false,
-        link: function($scope, element, attrs) {
+        link: function ($scope, element, attrs) {
             var $element = $(element);
 
             if (!attrs.noloading) {
                 $element.after("<img src='img/no-image.png' class='loading' />");
                 var $loading = $element.next(".loading");
-                $element.load(function() {
+                $element.load(function () {
                     $loading.remove();
                     $(this).addClass("doneLoading");
                 });
@@ -233,11 +318,11 @@ firstapp.directive('myEditor', function () {
 
 var editorG = {};
 var jsonEditorNo = 0;
-firstapp.directive('jsoneditor', function($compile, $parse) {
+firstapp.directive('jsoneditor', function ($compile, $parse) {
     return {
         restrict: 'EA',
         scope: false,
-        link: function($scope, element, attrs) {
+        link: function ($scope, element, attrs) {
             $element = $(element);
             $element.css("min-height", "200px");
             var jsoneditornumber = (jsonEditorNo++);
@@ -252,13 +337,13 @@ firstapp.directive('jsoneditor', function($compile, $parse) {
 
 
             editor.setValue($scope.api.Response[attrs.model], 1);
-            editor.on("change", function(e) {
+            editor.on("change", function (e) {
 
                 $scope.api.Response[attrs.model] = editor.getValue();
                 $scope.$apply();
             });
             var wrapMode = true;
-            setTimeout(function() {
+            setTimeout(function () {
                 editor.getSession().setUseWrapMode(wrapMode);
             }, 100);
 
@@ -268,7 +353,7 @@ firstapp.directive('jsoneditor', function($compile, $parse) {
                     win: "Ctrl-Alt-B",
                     mac: "Ctrl-Option-B"
                 },
-                exec: function(editor) {
+                exec: function (editor) {
                     var value = editor.getValue();
                     var beautiVal = js_beautify(value);
                     editor.setValue(beautiVal);
@@ -283,7 +368,7 @@ firstapp.directive('jsoneditor', function($compile, $parse) {
                     win: "Ctrl-Alt-S",
                     mac: "Ctrl-Option-S"
                 },
-                exec: function(editor) {
+                exec: function (editor) {
                     wrapMode = !wrapMode;
                     editor.getSession().setUseWrapMode(wrapMode);
 
@@ -293,15 +378,15 @@ firstapp.directive('jsoneditor', function($compile, $parse) {
     };
 });
 
-firstapp.directive('dlEnterKey', function() {
-    return function(scope, element, attrs) {
+firstapp.directive('dlEnterKey', function () {
+    return function (scope, element, attrs) {
 
-        element.bind("keydown keypress", function(event) {
+        element.bind("keydown keypress", function (event) {
             var keyCode = event.which || event.keyCode;
 
             // If enter key is pressed
             if (keyCode === 13) {
-                scope.$apply(function() {
+                scope.$apply(function () {
                     // Evaluate the expression
                     scope.$eval(attrs.dlEnterKey);
                 });
