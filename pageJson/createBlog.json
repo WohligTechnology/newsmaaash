@@ -69,6 +69,20 @@
         "validation": ["required", "trim", "unique"],
         "url": ""
     }, {
+        "name": "Is this a Popular Blog",
+        "type": "select",
+        "tableRef": "isPopular",
+        "placeholder": "Enter Is Popular Blog",
+        "id": "input3",
+        "validation": ["required", "trim", "unique"],
+        "url": [{
+            "value": true,
+            "name": "Yes"
+        }, {
+            "value": false,
+            "name": "No"
+        }]
+    }, {
         "name": "Description",
         "type": "tinymce",
         "tableRef": "description",
