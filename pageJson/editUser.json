@@ -16,26 +16,26 @@
     }, {
         "name": "Name",
         "type": "text",
-        "tableRef": "name",
+        "tableRef": "CustomerName",
         "placeholder": "Enter name",
         "id": "input2",
         "validation": ["required", "trim", "unique"],
         "url": "",
-        "model": "name"
+        "model": "CustomerName"
     }, {
         "name": "Email",
         "type": "email",
-        "tableRef": "email",
+        "tableRef": "CustomerEmail",
         "placeholder": "Enter Email",
         "id": "input4",
         "validation": ["required", "trim", "unique"],
         "url": "",
-        "model": "email"
+        "model": "CustomerEmail"
     }, {
         "name": "Mobile",
         "type": "text",
-        "tableRef": "mobile",
-        "model": "mobile",
+        "tableRef": "CustomerMobile",
+        "model": "CustomerMobile",
         "placeholder": "Enter mobile",
         "id": "input5",
         "validation": ["required", "trim", "unique"],
@@ -51,15 +51,6 @@
         "validation": ["required", "trim", "unique"],
         "size": ""
     }, {
-        "name": "Address",
-        "type": "textarea",
-        "tableRef": "address",
-        "model": "address",
-        "placeholder": "Enter address",
-        "id": "input5",
-        "validation": ["required", "trim", "unique"],
-        "url": ""
-    }, {
         "name": "Gender",
         "type": "select",
         "tableRef": "gender",
@@ -68,35 +59,17 @@
         "id": "input3",
         "validation": ["required", "trim", "unique"],
         "url": [{
-            "value": 1,
+            "value": "Male",
             "name": "Male"
         }, {
-            "value": 2,
+            "value": "Female",
             "name": "Female"
         }]
     }, {
-        "name": "Occasion",
-        "type": "text",
-        "tableRef": "occasion",
-        "model": "occasion",
-        "placeholder": "Enter occasion",
-        "id": "input5",
-        "validation": ["required", "trim", "unique"],
-        "url": ""
-    }, {
-        "name": "How many people",
-        "type": "text",
-        "tableRef": "noofpeople",
-        "model": "noofpeople",
-        "placeholder": "Enter noofpeople",
-        "id": "input5",
-        "validation": ["required", "trim", "unique"],
-        "url": ""
-    }, {
         "name": "Date",
         "type": "date",
-        "tableRef": "date",
-        "model": "date",
+        "tableRef": "dob",
+        "model": "dob",
         "placeholder": "Enter date",
         "id": "input5",
         "validation": ["required", "trim", "unique"],
@@ -112,56 +85,11 @@
         "validation": ["required", "trim", "unique"],
         "url": "city/getAll"
     }, {
-        "name": "Games Selected",
+        "name": "Pincode",
         "type": "text",
-        "tableRef": "arr",
-        "model": "arr",
-        "placeholder": "Enter games",
-        "id": "input5",
-        "validation": ["required", "trim", "unique"],
-        "url": ""
-    }, {
-        "name": "Food Style",
-        "type": "text",
-        "tableRef": "foodStyle",
-        "model": "foodStyle",
-        "placeholder": "Enter foodStyle",
-        "id": "input5",
-        "validation": ["required", "trim", "unique"],
-        "url": ""
-    }, {
-        "name": "Starter",
-        "type": "text",
-        "tableRef": "starter",
-        "model": "starter",
-        "placeholder": "Enter starter",
-        "id": "input5",
-        "validation": ["required", "trim", "unique"],
-        "url": ""
-    }, {
-        "name": "Main Course",
-        "type": "text",
-        "tableRef": "mainCourse",
-        "model": "mainCourse",
-        "placeholder": "Enter mainCourse",
-        "id": "input5",
-        "validation": ["required", "trim", "unique"],
-        "url": ""
-    }, {
-        "name": "Dessert",
-        "type": "text",
-        "tableRef": "dessert",
-        "model": "dessert",
-        "placeholder": "Enter dessert",
-        "id": "input5",
-        "validation": ["required", "trim", "unique"],
-        "url": ""
-    }, {
-        "name": "Alcohol",
-        "type": "text",
-        "tableRef": "alcohol",
-        "model": "alcohol",
-        "placeholder": "Enter alcohol",
+        "tableRef": "pincode",
+        "model": "pincode",
+        "placeholder": "Enter pincode",
         "id": "input5",
         "validation": ["required", "trim", "unique"],
         "url": ""

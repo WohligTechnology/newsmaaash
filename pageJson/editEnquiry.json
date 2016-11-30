@@ -60,6 +60,15 @@
         "validation": ["required", "trim", "unique"],
         "url": "city/getall"
     }, {
+        "name": "Number Of People",
+        "type": "text",
+        "tableRef": "noOfPeople",
+        "model": "noOfPeople",
+        "placeholder": "Enter noOfPeople",
+        "id": "input5",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    }, {
         "name": "Comment",
         "type": "textarea",
         "tableRef": "comment",

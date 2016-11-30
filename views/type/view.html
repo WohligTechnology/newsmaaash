@@ -32,6 +32,14 @@
                     </md-option>
                 </md-select>
             </md-input-container>
+            <md-input-container class="inputw2" ng-if="json.title=='Enquiries'">
+                <label>Select filter</label>
+                <md-select ng-model="status" ng-change="getAssistance(status,null,null)">
+                    <md-option ng-repeat="status in enquiryFilter" value="{{status.value}}">
+                        {{status.name}}
+                    </md-option>
+                </md-select>
+            </md-input-container>
         </div>
         <div class="ee" ng-if="json.title=='Call Enquiries'">
             <a href="{{adminurl}}callenquiry/exportCallEnquiriesExcel">

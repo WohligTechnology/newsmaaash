@@ -48,10 +48,38 @@
         "type": "image",
         "tableRef": "image",
         "model": "image",
-
         "size": "826 x 501 px",
         "placeholder": "Enter Picture",
         "id": "input4",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    }, {
+        "name": "Inside Page Top Banner",
+        "type": "image",
+        "tableRef": "banner",
+        "model": "banner",
+        "placeholder": "Enter City Picture",
+        "id": "input4",
+        "validation": ["required", "trim", "unique"],
+        "url": "",
+        "size": "1920 x 1079px"
+    }, {
+        "name": "Top Banner Video Url",
+        "type": "text",
+        "tableRef": "video",
+        "model": "video",
+        "placeholder": "Enter video",
+        "id": "input5",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    }, {
+        "name": "Top Banner Video Thumbnail",
+        "type": "image",
+        "tableRef": "videoThumbnail",
+        "model": "videoThumbnail",
+        "size": "1920 x 1079px",
+        "placeholder": "Enter video",
+        "id": "input5",
         "validation": ["required", "trim", "unique"],
         "url": ""
     }, {

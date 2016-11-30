@@ -41,7 +41,7 @@
         "name": "Video Thumbnail",
         "type": "image",
         "tableRef": "videoThumbnail",
-        "size": "",
+        "size": "1920 x 1079px",
         "placeholder": "Enter Picture",
         "id": "input4",
         "validation": ["required", "trim", "unique"],
@@ -106,6 +106,15 @@
         "validation": ["required", "trim", "unique"],
         "url": ""
     }, {
+        "name": "Inside Page Top Banner",
+        "type": "image",
+        "tableRef": "banner",
+        "placeholder": "Enter City Picture",
+        "id": "input4",
+        "validation": ["required", "trim", "unique"],
+        "url": "",
+        "size": "1920 x 1079"
+    }, {
         "name": "Description",
         "type": "tinymce",
         "tableRef": "description",
@@ -119,6 +128,14 @@
         "tableRef": "price",
         "placeholder": "Enter price",
         "id": "input1",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    }, {
+        "name": "PDF",
+        "type": "image",
+        "tableRef": "pdf",
+        "placeholder": "Enter Picture",
+        "id": "input4",
         "validation": ["required", "trim", "unique"],
         "url": ""
     }],

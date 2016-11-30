@@ -6,15 +6,15 @@
     "fields": [{
         "name": "Name",
         "isSort": "",
-        "tableRef": "name"
+        "tableRef": "CustomerName"
     }, {
         "name": "Email",
         "isSort": "",
-        "tableRef": "email"
+        "tableRef": "CustomerEmail"
     }, {
         "name": "Mobile",
         "isSort": "",
-        "tableRef": "mobile"
+        "tableRef": "CustomerMobile"
     }, {
         "name": "City",
         "isSort": "",

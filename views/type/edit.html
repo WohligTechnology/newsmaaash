@@ -78,7 +78,8 @@
                 <label for=""></label>{{field.name}}
                 <span class="img-holder-big" ng-show="json.editData[field.model] || (field.model || field.model!='')">
                     <img ng-src="{{json.editData[field.model] | uploadpath:250:250:'fill'}}">
-                </span> {{json.editData[field.model]}}
+                </span>
+                <p>{{json.editData[field.model]}}</p>{{json.editData.field}}
                 <md-button class="md-raised md-primary" ng-click="removeImage('edit',field.model,field)">Remove Image</md-button>
                 <upload-image ng-model="json.editData[field.model]" no-view></upload-image>
                 <span style="float: right;" class="imageSize">{{field.size}}</span>

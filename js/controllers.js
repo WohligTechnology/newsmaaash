@@ -295,6 +295,19 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 "name": "Not Attended",
                 "value": "Not Attended"
             }]
+            $scope.enquiryFilter = [{
+                "name": "All",
+                "value": ""
+            }, {
+                "name": "Web",
+                "value": "Web"
+            }, {
+                "name": "App",
+                "value": "App"
+            }, {
+                "name": "PaidSME",
+                "value": "PaidSME"
+            }]
             $scope.getMoreResults = function (value, search) {
                 $scope.search = search;
                 $scope.value = value;
