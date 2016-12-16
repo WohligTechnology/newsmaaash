@@ -32,11 +32,29 @@
                     </md-option>
                 </md-select>
             </md-input-container>
-            <md-input-container class="inputw2" ng-if="json.title=='Enquiries'">
+            <md-input-container ng-if="json.title=='Enquiries'">
+                <!--// city-->
+                <label>Select City</label>
+                <md-select ng-model="movie" ng-change="getAwardByMovie1(movie)">
+                    <md-option ng-repeat="dropdown in dropdownvalues1" value="{{dropdown._id}}">
+                        {{dropdown.name}}
+                    </md-option>
+                </md-select>
+            </md-input-container>
+            <!--<md-input-container class="inputw2" ng-if="json.title=='Enquiries'">
                 <label>Select filter</label>
                 <md-select ng-model="status" ng-change="getAssistance(status,null,null)">
                     <md-option ng-repeat="status in enquiryFilter" value="{{status.value}}">
                         {{status.name}}
+                    </md-option>
+                </md-select>
+            </md-input-container>-->
+            <md-input-container ng-if="json.title=='Enquiries'">
+                <!--party type-->
+                <label>Select Party Type</label>
+                <md-select ng-model="movie" ng-change="getAwardByMovie(movie)">
+                    <md-option ng-repeat="dropdown in dropdownvalues" value="{{dropdown._id}}">
+                        {{dropdown.name}}
                     </md-option>
                 </md-select>
             </md-input-container>

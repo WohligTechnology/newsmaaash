@@ -386,6 +386,24 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                     console.log("Fail");
                 });
             }
+            if ($scope.json.apiCallForSearch1) {
+                NavigationService.getDropDown($scope.json.apiCallForSearch1.url, function (data) {
+
+                    dropdownvalues1 = [];
+                    if (data) {
+                        for (var i = 0; i < data.data.length; i++) {
+                            var dropdown = {};
+                            dropdown._id = data.data[i]._id;
+                            dropdown.name = data.data[i].name;
+                            dropdownvalues1.push(dropdown);
+                        }
+                    }
+                    $scope.dropdownvalues1 = dropdownvalues1;
+                    console.log(dropdownvalues1);
+                }, function () {
+                    console.log("Fail");
+                });
+            }
             $scope.callExportApi = function (title) {
                 NavigationService.callExportApi(title, function (data) {
                     console.log(data);
@@ -399,6 +417,35 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             $scope.getAwardByMovie = function (movieid) {
                 //
                 $scope.pagination._id = movieid;
+                $scope.apiName = $scope.json.apiCall.url;
+                $scope.pageInfo = {
+                    totalitems: 5000
+                };
+                NavigationService.findProjects($scope.apiName, $scope.pagination, function (findData) {
+                    console.log(findData);
+                    if (findData.value !== false) {
+                        if (findData.data && findData.data.data && findData.data.data.length > 0) {
+                            $scope.pageInfo.lastpage = findData.data.totalpages;
+                            $scope.pageInfo.pagenumber = findData.data.pagenumber;
+                            $scope.pageInfo.totalitems = $scope.pagination.pagesize * findData.data.totalpages;
+                            $scope.json.tableData = findData.data.data;
+                        } else {
+                            $scope.json.tableData = [];
+                            $scope.pageInfo.totalitems = 0;
+                        }
+                    } else {
+                        $scope.json.tableData = [];
+                        $scope.pageInfo.totalitems = 0;
+                    }
+                    console.log($scope.pagination);
+                }, function () {
+                    console.log("Fail");
+                });
+
+            };
+            $scope.getAwardByMovie1 = function (movieid) {
+                //
+                $scope.pagination._id1 = movieid;
                 $scope.apiName = $scope.json.apiCall.url;
                 $scope.pageInfo = {
                     totalitems: 5000

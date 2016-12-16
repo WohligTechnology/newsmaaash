@@ -90,6 +90,7 @@
         "url": "enquiry/getOne",
         "params": "_id"
     },
+
     "apiCall": {
         "url": "enquiry/save",
         "params": "_id"
