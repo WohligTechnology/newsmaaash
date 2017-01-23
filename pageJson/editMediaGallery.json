@@ -13,17 +13,17 @@
         "validation": ["required", "trim", "unique"],
         "url": "",
         "model": "_id"
-    },{
+    }, {
         "name": "City Name",
         "type": "selectFromTable",
-        "option":"multiple",
+        "option": "multiple",
         "tableRef": "city",
         "model": "city",
         "placeholder": "Enter name",
         "id": "input1",
         "validation": ["required", "trim", "unique"],
         "url": "city/getAll"
-    },{
+    }, {
         "name": "Order",
         "type": "text",
         "tableRef": "order",
@@ -32,6 +32,17 @@
         "id": "input5",
         "validation": ["required", "trim", "unique"],
         "url": ""
+
+    }, {
+        "name": "Link",
+        "type": "text",
+        "tableRef": "link",
+        "placeholder": "Enter Link",
+        "id": "input7",
+        "model": "link",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+
     }, {
         "name": "Status",
         "type": "select",
@@ -47,22 +58,22 @@
             "value": false,
             "name": "Disable"
         }]
-    },{
+    }, {
         "name": "Image",
         "type": "image",
         "tableRef": "image",
         "model": "image",
-        "size":"279 x 305",
+        "size": "279 x 305",
         "placeholder": "Enter City Picture",
         "id": "input4",
         "validation": ["required", "trim", "unique"],
         "url": ""
-    } ,{
+    }, {
         "name": "Pop Up Image",
         "type": "image",
         "tableRef": "popupImage",
         "model": "popupImage",
-        "size":"940 x 564",
+        "size": "940 x 564",
         "placeholder": "Enter City Picture",
         "id": "input4",
         "validation": ["required", "trim", "unique"],
