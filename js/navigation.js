@@ -1,4 +1,5 @@
-var adminurl = "http://104.155.129.33:82/";
+var adminurl="http://104.154.79.188:82/"; // NEW SMAASH SERVER
+// var adminurl = "http://104.155.129.33:82/";
 // var adminurl = "http://localhost:1337/";
 var uploadurl = adminurl + "upload/";
 var imgpath = uploadurl + "readFile";
